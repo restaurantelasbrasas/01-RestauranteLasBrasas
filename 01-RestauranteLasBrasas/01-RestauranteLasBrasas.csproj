@@ -67,6 +67,12 @@
     <Compile Include="UserControlFacturacion.xaml.cs">
       <DependentUpon>UserControlFacturacion.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlHistorial.xaml.cs">
+      <DependentUpon>UserControlHistorial.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlInventario.xaml.cs">
+      <DependentUpon>UserControlInventario.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -84,6 +90,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlFacturacion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlHistorial.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlInventario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
