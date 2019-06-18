@@ -25,21 +25,40 @@ namespace _01_RestauranteLasBrasas
             InitializeComponent();
         }
 
-        private void ButtomPopUpSalir_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
-        }
-
         private void ButtonAbrirMenu_Click(object sender, RoutedEventArgs e)
         {
+            ButtonCerrarMenu.Visibility = Visibility.Visible;
             ButtonAbrirMenu.Visibility = Visibility.Collapsed;
-            ButtonAbrirMenu.Visibility = Visibility.Visible;
         }
 
         private void ButtonCerrarMenu_Click(object sender, RoutedEventArgs e)
         {
+            ButtonCerrarMenu.Visibility = Visibility.Collapsed;
             ButtonAbrirMenu.Visibility = Visibility.Visible;
-            ButtonAbrirMenu.Visibility = Visibility.Collapsed;
+        }
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UserControl usc = null;
+            GridMain.Children.Clear();
+
+            switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
+            {
+                case "ItemEmpleados":
+                    usc = new UserControlEmpleados();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemFacturacion":
+                    usc = new UserControlFacturacion();
+                    GridMain.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void BtnSalir_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Shutdown();
         }
     }
 }
+

@@ -5,100 +5,102 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1080" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Foreground="White">
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
-        <Storyboard x:Key="MenuAbrir">
+        <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="70" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="175" />
+                <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-
-        <Storyboard x:Key="MenuCerrar">
+        <Storyboard x:Key="CerrarMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
-                <EasingDoubleKeyFrame KeyTime="0" Value="175" />
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70" />
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="70"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        
     </Window.Resources>
-
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonAbrirMenu">
-            <BeginStoryboard Storyboard="{StaticResource MenuAbrir}"/>
+            <BeginStoryboard Storyboard="{StaticResource AbrirMenu}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonCerrarMenu">
-            <BeginStoryboard Storyboard="{StaticResource MenuCerrar}"/>
+            <BeginStoryboard Storyboard="{StaticResource CerrarMenu}"/>
         </EventTrigger>
     </Window.Triggers>
-
-
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="19*"/>
-            <ColumnDefinition Width="339*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Height="50" VerticalAlignment="Top" Background="#FF1344C5" Grid.ColumnSpan="2">
+    <Grid Background="#FFDEDEDE">
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
+            <Image Source="Logo/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500"/>
+        </Grid>
+        <Grid Height="60" VerticalAlignment="Top" Background="#FF1344C5">
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC"/>
+            </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Nombre Usuario" VerticalAlignment="Center" FontSize="16"/>
+                <TextBlock Text="Usuario" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button Content="Configuracion"/>
-                        <Button Content="Cuenta"/>
-                        <Button Content="Ayuda"/>
+                        <Button x:Name="BtnConfiguracion" Content="Configuracion"/>
+                        <Button x:Name="BtnCuenta" Content="Cuenta"/>
+                        <Button x:Name="BtnAyuda" Content="Ayuda"/>
                         <Separator/>
-                        <Button x:Name="ButtomPopUpSalir" Content="Salir" Click="ButtomPopUpSalir_Click"/>
+                        <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
             </StackPanel>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Menu</TextBlock>
-
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">Menu</TextBlock>
         </Grid>
+        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF38220E" >
+            <Grid.Effect>
+                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
+            </Grid.Effect>
+            <StackPanel >
+                <Grid Height="150" Background="#FFAE9A8B" RenderTransformOrigin="0.5,0.5" >
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Button x:Name="ButtonAbrirMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonAbrirMenu_Click">
+                        <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
+                    </Button>
+                    <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click">
+                        <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
+                    </Button>
+                    <Image Source="Logo/User.png" Height="100" VerticalAlignment="Bottom"/>
 
-         <Grid x:Name="GridMenu" Width="175" HorizontalAlignment="Left" Background="#3c2a1e" Grid.ColumnSpan="2">
-            <ListView Margin="0,151,0,0">
-                <ListViewItem>
-                    <StackPanel Orientation="Vertical">
-                        <Button Background="#FFF5C72A" BorderBrush="#FFF5C72A" Height="50" Width="155" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Person" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="40"/>
-                                <TextBlock Text=" Empleados" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Background="#FFF5C72A" BorderBrush="#FFF5C72A" Height="50" Width="155" Margin="0,10,0,0" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Money" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="40"/>
-                                <TextBlock Text=" Facturacion" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Background="#FFF5C72A" BorderBrush="#FFF5C72A" Height="50" Width="155" Margin="0,10,0,0" >
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                                <materialDesign:PackIcon Kind="History" HorizontalAlignment="Left" VerticalAlignment="Center"  Height="40" Width="40"/>
-                                <TextBlock Text=" Historial C/V" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            </StackPanel>
-                        </Button>
-                        <Button Background="#FFF5C72A" BorderBrush="#FFF5C72A" Height="50" Width="155" Margin="0,10,0,0" HorizontalAlignment="Left" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Food" HorizontalAlignment="Left" VerticalAlignment="Center" Height="40" Width="40"/>
-                                <TextBlock Text=" Inventario " VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            </StackPanel>
-                        </Button>
-                    </StackPanel>
-
-                </ListViewItem>
-            </ListView>
-            <Grid Height="150" Width="175" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FDFFD6BA" Grid.ColumnSpan="2">
-                <Button x:Name="ButtonAbrirMenu" Height="60" Width="60" Margin="1" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonAbrirMenu_Click">
-                    <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
-                </Button>
-                <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click">
-                    <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
-                </Button>
-            </Grid >
+                </Grid>
+                <ListView x:Name="ListViewMenu" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Center">
+                    <ListViewItem x:Name="ItemEmpleados" Height="60" >
+                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
+                            <materialDesign:PackIcon Kind="HumanHandsdown" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Empleados" VerticalAlignment="Center" Margin="20 10" Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemFacturacion" Height="60">
+                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
+                            <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Facturacion" VerticalAlignment="Center" Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel x:Name="ItemHistorial" Orientation="Horizontal" Background="#FFF5C72A">
+                            <materialDesign:PackIcon Kind="History" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Historial" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem Height="60">
+                        <StackPanel x:Name="ItemInventario" Orientation="Horizontal" Background="#FFF5C72A">
+                            <materialDesign:PackIcon Kind="Food" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Inventario" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                </ListView>
+            </StackPanel>
         </Grid>
     </Grid>
-
-
-
 </Window>
+
