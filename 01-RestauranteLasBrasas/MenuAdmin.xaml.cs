@@ -10,21 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace _01_RestauranteLasBrasas
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para MenuAdmin.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MenuAdmin : Window
     {
-        public MainWindow()
+        public MenuAdmin()
         {
             InitializeComponent();
         }
-
         private void ButtonAbrirMenu_Click(object sender, RoutedEventArgs e)
         {
             ButtonCerrarMenu.Visibility = Visibility.Visible;
@@ -39,7 +37,6 @@ namespace _01_RestauranteLasBrasas
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             UserControl usc = null;
-            GridMain.Children.Clear();
 
             switch (((ListViewItem)((ListView)sender).SelectedItem).Name)
             {
@@ -63,10 +60,11 @@ namespace _01_RestauranteLasBrasas
                     break;
             }
         }
+        Login login = new Login();
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
-            App.Current.Shutdown();
+            login.Show();
+            this.Close();
         }
     }
 }
-
