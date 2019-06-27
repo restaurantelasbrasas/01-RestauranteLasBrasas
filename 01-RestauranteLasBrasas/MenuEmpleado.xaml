@@ -56,6 +56,13 @@
             </Grid.Effect>
             <StackPanel >
                 <Grid Height="150" Background="#FFAE9A8B" RenderTransformOrigin="0.5,0.5" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="73*"/>
+                    </Grid.RowDefinitions>
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -64,13 +71,13 @@
                             <TranslateTransform/>
                         </TransformGroup>
                     </Grid.RenderTransform>
-                    <Button x:Name="ButtonAbrirMenu" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonAbrirMenu_Click">
+                    <Button x:Name="ButtonAbrirMenu" Height="60" Width="60" Margin="0,1,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonAbrirMenu_Click" Grid.Row="1">
                         <materialDesign:PackIcon Kind="Menu" Width="25" Height="25"/>
                     </Button>
-                    <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click">
+                    <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="0,1,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click" Grid.Row="1">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-                    <Image Source="Logo/User.png" Height="100" VerticalAlignment="Bottom"/>
+                    <Image Source="Logo/User.png" Height="100" VerticalAlignment="Bottom" Grid.Row="1"/>
 
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Center">

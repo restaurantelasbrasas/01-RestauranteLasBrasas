@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace _01_RestauranteLasBrasas
 {
     /// <summary>
-    /// Lógica de interacción para UserControlFacturacion.xaml
+    /// Lógica de interacción para Fondo.xaml
     /// </summary>
-    public partial class UserControlFacturacion : UserControl
+    public partial class Fondo : UserControl
     {
-        public UserControlFacturacion()
+        public Fondo()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

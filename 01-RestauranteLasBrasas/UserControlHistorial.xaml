@@ -3,10 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Green">
-            
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid Background="#FFDEDEDE">
+        <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" >
+            <TextBlock Text="HISTORIAL" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
+                <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
+            </Button>
+        </Grid>
+        <StackPanel Orientation="Vertical" Height="490" VerticalAlignment="Bottom" >
+            <StackPanel Height="50" VerticalAlignment="Top" Margin="50" Orientation="Horizontal">
+                <TextBlock Text="Fecha:" FontSize="30" Foreground="Black"/>
+                <TextBox Background="White" Width="100" Height="30" Margin="30,0,30,0"/>
+                <TextBlock Text="a" FontSize="30" Foreground="Black"/>
+                <TextBox Background="White" Width="100" Height="30" Margin="30,0,30,0"/>
+                <ComboBox IsEditable="True" IsReadOnly="True" Text="Tipo de historial " FontSize="20"   />
+                <Button Content="Listar" Width="100" Margin="30,0,0,0" Background="#FF1344C5"/>
+            </StackPanel>
+            <Grid Background="#FFAE9A8B" Width="900" Height="300" HorizontalAlignment="Left" Margin="50,0,50,50">
+                </Grid>
+        </StackPanel>
+
+
     </Grid>
 </UserControl>

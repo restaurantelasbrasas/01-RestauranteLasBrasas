@@ -24,5 +24,10 @@ namespace _01_RestauranteLasBrasas
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

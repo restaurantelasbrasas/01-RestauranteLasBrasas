@@ -18,11 +18,19 @@ namespace _01_RestauranteLasBrasas
     /// <summary>
     /// Lógica de interacción para UserControlEmpleados.xaml
     /// </summary>
-    public partial class UserControlEmpleados : UserControl
+    public partial class UserControlEmpleados : UserControl 
+
     {
         public UserControlEmpleados()
         {
             InitializeComponent();
+        }
+
+        
+        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

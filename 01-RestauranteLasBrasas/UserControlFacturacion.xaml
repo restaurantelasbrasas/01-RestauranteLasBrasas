@@ -3,10 +3,64 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Red">
-            
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid Background="#FFDEDEDE">
+        <StackPanel>
+            <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" >
+                <TextBlock Text="FACTURACION" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
+                    <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
+                </Button>
+            </Grid>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Factura No." VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="Black"/>
+                <TextBox x:Name="FacturaNumero" Background="White" Width="200" Margin="10"/>
+                <TextBlock Text=" Caja No." VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="Black"/>
+                <TextBox x:Name="CajaNumero" Background="White" Width="50" Margin="10"/>
+                <TextBlock Text=" Turno No." VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="Black"/>
+                <TextBox x:Name="TurnoNumero" Background="White" Width="50" Margin="10"/>
+                <TextBlock Text=" Fecha." VerticalAlignment="Center" FontSize="20" Margin="10,0,0,0" Foreground="Black"/>
+                <DatePicker Name="fecha" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Width="300" Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
+                    <Grid Height="250" OpacityMask="Black" RenderTransformOrigin="0.507,0.284" >
+
+                        <Image Source="Logo/GridFactura.png" Width="300"/>
+
+                    </Grid>
+                    <Grid Height="50"  Width="245" Background="White" Margin="0,10,0,0">
+                        <TextBlock Text="       Observacion:" FontSize="15" Margin="0,0,30,0" HorizontalAlignment="Right" Width="242" Foreground="Black"/>
+                    </Grid>
+                    <Grid Background="Black" Height="70" Margin="30,20,28,20" >
+                        <TextBlock  Text=" TOTAL 00:00" Foreground="Green" FontSize="40"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel  Width="600" Orientation="Vertical"  Margin="20">
+                    <StackPanel Orientation="Vertical">
+                        <Grid Background="#FFAE9A8B" Height="330">
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Background="#FF1344C5" Height="60" Orientation="Horizontal">
+                                    <Button x:Name="Comidas" Content="Comidas" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
+                                    <Button x:Name="Bebidas" Content="Bebidas" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
+                                    <Button x:Name="Postres" Content="Postres" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
+                                    <Button x:Name="EspecialesDia" Content="Especiales del dia" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
+                                    <materialDesign:PackIcon Kind="Plus" Height="30" Width="30" VerticalAlignment="Center" Background="Green" Margin="10,0,0,0"/>
+                                    <materialDesign:PackIcon Kind="Close" Height="30" Width="30" VerticalAlignment="Center" Background="Red" Margin="10,0,0,0"/>
+                                </StackPanel>
+                                <DataGrid Height="270" Background="#FFAE9A8B"/>
+                            </StackPanel>
+                        </Grid>
+                        <Button Margin="0,10,0,0" Background="#FF1344C5" Content="Pagar $" FontSize="25" Height="53">
+                            
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>
