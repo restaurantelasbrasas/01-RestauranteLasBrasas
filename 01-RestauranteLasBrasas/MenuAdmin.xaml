@@ -40,9 +40,9 @@
                 <TextBlock Text="Administrador" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button x:Name="BtnConfiguracion" Content="Configuracion"/>
-                        <Button x:Name="BtnCuenta" Content="Cuenta"/>
-                        <Button x:Name="BtnAyuda" Content="Ayuda"/>
+                        <Button x:Name="BtnCuenta" Content="Cuenta" Click="BtnCuenta_Click"/>
+                        <Button x:Name="BtnAyuda" Content="Ayuda" Click="BtnAyuda_Click"/>
+                        <Button x:Name="BtnCerrarSesion" Content="Cerrar sesion" Click="BtnCerrarSesion_Click"/>
                         <Separator/>
                         <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
                     </StackPanel>

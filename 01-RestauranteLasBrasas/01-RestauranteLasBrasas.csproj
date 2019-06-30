@@ -166,5 +166,8 @@
     <Resource Include="Logo\sa.png" />
     <Resource Include="Logo\sea.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="OpcionesUsuario\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

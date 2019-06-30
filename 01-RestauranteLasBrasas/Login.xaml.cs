@@ -29,7 +29,6 @@ namespace _01_RestauranteLasBrasas
             
             if (MessageBox.Show("Realmente desea salir?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                MessageBox.Show("Tenga un buen dia", "Adios");
                 App.Current.Shutdown();
             }
             else
