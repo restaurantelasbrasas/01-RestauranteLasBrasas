@@ -96,6 +96,9 @@ namespace _01_RestauranteLasBrasas
         private void BtnCuenta_Click(object sender, RoutedEventArgs e)
         {
 
+            UserControl usc = null;
+            usc = new Ayuda();
+            GridMain.Children.Add(usc);
 
         }
     }

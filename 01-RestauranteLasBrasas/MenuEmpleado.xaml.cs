@@ -59,8 +59,28 @@ namespace _01_RestauranteLasBrasas
         Login login = new Login();
         private void BtnSalir_Click(object sender, RoutedEventArgs e)
         {
-            login.Show();
-            this.Close();
+
+            if (MessageBox.Show("Realmente desea salir?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                App.Current.Shutdown();
+            }
+            else
+            {
+                //No hace nada
+            }
+        }
+
+        private void BtnCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Realmente desea cerrar sesion?", "Consulta", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                login.Show();
+                this.Close();
+            }
+            else
+            {
+                //No hace nada
+            }
         }
     }
 }
