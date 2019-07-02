@@ -40,7 +40,7 @@
                 <TextBlock Text="Administrador" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button x:Name="BtnCerrarSesion" Content="Salir" Click="BtnCerrarSesion_Click"/>
+                        <Button x:Name="BtnCerrarSesion" Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
                         <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
