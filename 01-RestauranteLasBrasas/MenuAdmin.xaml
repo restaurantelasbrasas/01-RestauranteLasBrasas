@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -30,7 +30,7 @@
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
-            <Image Source="Logo/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Margin="255,104" Grid.RowSpan="2"/>
+            <Image Source="Logo/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" />
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF1344C5">
             <Grid.Effect>
