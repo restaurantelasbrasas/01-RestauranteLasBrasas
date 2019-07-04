@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="_01_RestauranteLasBrasas.UserControlProducto"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid Background="#FFDEDEDE">
+        <StackPanel Orientation="Vertical">
+            <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" >
+                <TextBlock Text="PRODUCTO" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+                <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B">
+                    <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
+                </Button>
+            </Grid>
+            <StackPanel Orientation="Horizontal" Margin="20">
+                <TextBlock Text="Id Producto" FontSize="20"/>
+                <TextBox Height="20" Width="200"  Background="White" Margin="10,0,0,0"/>
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Buscar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+            </StackPanel>
+            <DataGrid x:Name="gridProductos" Margin="20" Height="300">
+                <DataGrid.Columns >
+                    <DataGridTextColumn Header="Categoria" Width="100" FontFamily="Roboto Condensed"/>
+                    <DataGridTextColumn Header="Nombre" Width="100" FontFamily="Roboto Condensed" />
+                    <DataGridTextColumn Header="Marca" Width="100" FontFamily="Roboto Condensed"/>
+                    <DataGridTextColumn Header="Stock" Width="100" FontFamily="Roboto Condensed"/>
+                    <DataGridTextColumn Header="Precio de venta" Width="150" FontFamily="Roboto Condensed"/>
+                    <DataGridTextColumn Header="Fecha de vencimiento" Width="200" FontFamily="Roboto Condensed"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Agregar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Modificar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Eliminar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

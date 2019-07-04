@@ -44,17 +44,17 @@
                         <Grid Background="#FFAE9A8B" Height="330">
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Background="#FF1344C5" Height="60" Orientation="Horizontal">
-                                    <Button x:Name="Comidas" Content="Comidas" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
-                                    <Button x:Name="Bebidas" Content="Bebidas" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
-                                    <Button x:Name="Postres" Content="Postres" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
-                                    <Button x:Name="EspecialesDia" Content="Especiales del dia" Margin="10" Background="#FFF5C72A" BorderBrush="White"/>
+                                    <Button x:Name="Comidas" Content="Comidas" Margin="10" Background="#ff5709" BorderBrush="#ff5709" Foreground="White"/>
+                                    <Button x:Name="Bebidas" Content="Bebidas" Margin="10" Background="#ff5709" BorderBrush="#ff5709" Foreground="White"/>
+                                    <Button x:Name="Postres" Content="Postres" Margin="10" Background="#ff5709" BorderBrush="#ff5709" Foreground="White"/>
+                                    <Button x:Name="EspecialesDia" Content="Especiales del dia" Margin="10" Background="#ff5709" BorderBrush="#ff5709" Foreground="White"/>
                                     <materialDesign:PackIcon Kind="Plus" Height="30" Width="30" VerticalAlignment="Center" Background="Green" Margin="10,0,0,0"/>
                                     <materialDesign:PackIcon Kind="Close" Height="30" Width="30" VerticalAlignment="Center" Background="Red" Margin="10,0,0,0"/>
                                 </StackPanel>
                                 <DataGrid Height="270" Background="#FFAE9A8B"/>
                             </StackPanel>
                         </Grid>
-                        <Button Margin="0,10,0,0" Background="#FF1344C5" Content="Pagar $" FontSize="25" Height="53">
+                        <Button Margin="0,10,0,0" Background="#FF1344C5" Content="Pagar $" FontSize="25" Height="53" Foreground="White" BorderBrush="Blue">
                             
                         </Button>
                     </StackPanel>

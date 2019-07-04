@@ -79,6 +79,7 @@
     <Compile Include="MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Productos.cs" />
     <Compile Include="UserControlEmpleados.xaml.cs">
       <DependentUpon>UserControlEmpleados.xaml</DependentUpon>
     </Compile>
@@ -90,6 +91,9 @@
     </Compile>
     <Compile Include="UserControlInventario.xaml.cs">
       <DependentUpon>UserControlInventario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProducto.xaml.cs">
+      <DependentUpon>UserControlProducto.xaml</DependentUpon>
     </Compile>
     <Page Include="Ayuda.xaml">
       <SubType>Designer</SubType>
@@ -128,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlInventario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlProducto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

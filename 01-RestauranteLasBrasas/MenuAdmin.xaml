@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -72,29 +72,35 @@
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Center">
                     <ListViewItem x:Name="ItemEmpleados" Height="60" >
-                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
+                        <StackPanel Orientation="Horizontal" Background="#ff5709">
                             <materialDesign:PackIcon Kind="HumanHandsdown" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Empleados" VerticalAlignment="Center" Margin="20 10" Width="75"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemFacturacion" Height="60">
-                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
+                        <StackPanel Orientation="Horizontal" Background="#ff5709">
                             <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Facturacion" VerticalAlignment="Center" Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemHistorial" Height="60">
-                        <StackPanel  Orientation="Horizontal" Background="#FFF5C72A">
+                        <StackPanel  Orientation="Horizontal" Background="#ff5709">
                             <materialDesign:PackIcon Kind="History" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Historial" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
                     <ListViewItem x:Name="ItemInventario" Height="60">
-                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
+                        <StackPanel Orientation="Horizontal" Background="#ff5709">
                             <materialDesign:PackIcon Kind="Food" Height="25" Width="25" Margin="10"/>
                             <TextBlock Text="Inventario" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
+                   <!-- <ListViewItem x:Name="ItemProducto" Height="60">
+                        <StackPanel Orientation="Horizontal" Background="#ff5709">
+                            <materialDesign:PackIcon Kind="Food" Height="25" Width="25" Margin="10"/>
+                            <TextBlock Text="Producto" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>-->
                 </ListView>
             </StackPanel>
         </Grid>

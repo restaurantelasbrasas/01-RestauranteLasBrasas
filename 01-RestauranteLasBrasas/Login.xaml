@@ -36,8 +36,8 @@
             </StackPanel>
         </Grid>
         <StackPanel Orientation="Horizontal" Margin="0,65" HorizontalAlignment="Center">
-            <Button Width="100"  VerticalAlignment="Bottom"  Content="INGRESAR" Margin="5" Background="#2A2D34" BorderBrush="#2A2D34" Click="Button_Click"/>
-            <Button x:Name="salir" Width="100" VerticalAlignment="Bottom"  Content="SALIR" Margin="5"  Background="#2A2D34" BorderBrush="#2A2D34" Click="Salir_Click"/>
+            <Button Width="100"  VerticalAlignment="Bottom"  Content="INGRESAR" Margin="5" Background="#2A2D34" BorderBrush="#2A2D34" Click="Button_Click" Foreground="White"/>
+            <Button x:Name="salir" Width="100" VerticalAlignment="Bottom"  Content="SALIR" Margin="5"  Background="#2A2D34" BorderBrush="#2A2D34" Click="Salir_Click" Foreground="White"/>
         </StackPanel>
 
         <Image Source="Logo/Logo Resturante Las Brasas.png" Width="225" Height="200" VerticalAlignment="Top" Margin="10"/>
