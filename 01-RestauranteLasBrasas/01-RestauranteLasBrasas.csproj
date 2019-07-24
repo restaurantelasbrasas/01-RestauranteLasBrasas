@@ -79,6 +79,15 @@
     <Compile Include="MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControlCargo.xaml.cs">
+      <DependentUpon>UserControlCargo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCategoria.xaml.cs">
+      <DependentUpon>UserControlCategoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlClientes.xaml.cs">
+      <DependentUpon>UserControlClientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEmpleados.xaml.cs">
       <DependentUpon>UserControlEmpleados.xaml</DependentUpon>
     </Compile>
@@ -90,6 +99,18 @@
     </Compile>
     <Compile Include="UserControlInventario.xaml.cs">
       <DependentUpon>UserControlInventario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlProducto.xaml.cs">
+      <DependentUpon>UserControlProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUsuarios.xaml.cs">
+      <DependentUpon>UserControlUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowGestionarClientes.xaml.cs">
+      <DependentUpon>WindowGestionarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowGestionarProducto.xaml.cs">
+      <DependentUpon>WindowGestionarProducto.xaml</DependentUpon>
     </Compile>
     <Page Include="Ayuda.xaml">
       <SubType>Designer</SubType>
@@ -115,6 +136,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlCargo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCategoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlEmpleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +161,22 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlInventario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlProducto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowGestionarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowGestionarProducto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -150,6 +199,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Recursos\Calculator.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,21 +210,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logo\Logo Resturante Las Brasas.png" />
+    <Resource Include="Recursos\Logo Resturante Las Brasas.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logo\User.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logo\GridFactura.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logo\add.png" />
-    <Resource Include="Logo\del.png" />
-    <Resource Include="Logo\ed.png" />
-    <Resource Include="Logo\pr.png" />
-    <Resource Include="Logo\sa.png" />
-    <Resource Include="Logo\sea.png" />
+    <Resource Include="Recursos\User.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ayuda\" />

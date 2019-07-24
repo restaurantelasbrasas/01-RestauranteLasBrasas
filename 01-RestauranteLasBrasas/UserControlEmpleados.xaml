@@ -6,59 +6,72 @@
              xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-
              d:DesignHeight="540" d:DesignWidth="1010">
     <Grid Background="#FFDEDEDE">
-        <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" >
-            <TextBlock Text="EMPLEADOS" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        
+            <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" Grid.Row="0">
+            <TextBlock Text="EMPLEADOS" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" />
             <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
-                <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
+                <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
             </Button>
         </Grid>
-        <Grid >
-            <StackPanel Orientation="Horizontal" >
-                <StackPanel Margin="50,100,0,0" Width="550" Height="398" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid  Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="600"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+             <StackPanel Orientation="Horizontal"  Grid.Column="0"  Margin="80,0,0,0">
+                <StackPanel Width="550" Height="398" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="Identidad   " VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <TextBox x:Name="Identidad" Background="White" Width="200" Margin="10,0,0,0"/>
-                        <Button Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="30" Height="50"/>
+                        <TextBlock Text="Identidad   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="Identidad" Background="White" Width="300"/>
+                        <Button Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="15" Width="90"  BorderBrush="Blue"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Nombre     " VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <TextBox x:Name="Nombre" Background="White" Width="350" Margin="10,0,0,0"/>
+                        <TextBlock Text="Apellido     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="Apellido" Background="White" Width="400" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Contraseña" VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <TextBox x:Name="Contrase" Background="White" Width="352" Margin="10,0,0,0"/>
+                        <TextBlock Text="Nombre     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="Nombre" Background="White" Width="400"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Direccion   " VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <TextBox x:Name="Direccion" Background="White" Width="353" Margin="10,0,0,0"/>
+                        <TextBlock Text="Sexo          " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <RadioButton Content="Femenino" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        <RadioButton Content="Masculino" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Telefono    " VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <TextBox x:Name="Telefono" Background="White" Width="355" Margin="10,0,0,0"/>
+                        <TextBlock Text="Fecha de nacimiento" VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <DatePicker Width="310" Margin="10,0,0,0"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                        <TextBlock Text="Cargo        " VerticalAlignment="Center" FontSize="30" Foreground="Black"/>
-                        <ComboBox IsEditable="True" IsReadOnly="True" Text="Por favor seleccione una " FontSize="20"  Margin="10"/>
+                        <TextBlock Text="Direccion   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="Direccion" Background="White" Width="400" />
                     </StackPanel>
-                    <StackPanel>
-                        <Button Content="Agregar" Background="#FF1344C5" Margin="10,25,0,0" FontSize="30" Height="50"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="Estado Civil " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <ComboBox IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="380"/>
                     </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Text="Cargo        " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                        <ComboBox IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="390"/>
+                    </StackPanel>
+
                 </StackPanel>
-                <StackPanel Margin="0,100,0,0" HorizontalAlignment="Center">
-
-                    <Grid Width="300" Height="300" Background="#FFAE9A8B" HorizontalAlignment="Center" Margin="50,0,0,0">
-                        <Image Source="Logo/User.png" Height="250" VerticalAlignment="Top" />
-                        <TextBlock Text="SUBIR FOTO" VerticalAlignment="Bottom" HorizontalAlignment="Center" Foreground="White" FontSize="25" Margin="0,0,0,15" />
-                    </Grid>
-
-                </StackPanel>
-
             </StackPanel>
-
+            <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                <Image Source="C:\Users\Usuario\source\repos\01-RestauranteLasBrasas4\01-RestauranteLasBrasas\Recursos\User.png" Width="300"/>
+                <Button Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" />
+            </StackPanel>
+           
         </Grid>
-
     </Grid>
 </UserControl>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="CanResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        mc:Ignorable="d" Height="600" Width="1080" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Resources>
         <Storyboard x:Key="AbrirMenu">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
@@ -30,7 +30,7 @@
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
-            <Image Source="Logo/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" />
+            <Image Source="C:\Users\Usuario\source\repos\01-RestauranteLasBrasas4\01-RestauranteLasBrasas\Recursos\Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" />
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF1344C5">
             <Grid.Effect>
@@ -67,7 +67,7 @@
                     <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="5" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-                    <Image Source="Logo/User.png" Height="100" VerticalAlignment="Bottom"/>
+                    <Image Source="C:\Users\Usuario\source\repos\01-RestauranteLasBrasas4\01-RestauranteLasBrasas\Recursos\User.png" Height="100" VerticalAlignment="Bottom"/>
 
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Center">
