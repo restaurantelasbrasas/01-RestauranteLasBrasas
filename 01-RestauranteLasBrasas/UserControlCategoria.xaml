@@ -18,7 +18,7 @@
         <StackPanel Grid.Row="0">
             <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top"  >
                 <TextBlock Text="Categoria" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
-                <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
                     <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
                 </Button>
             </Grid>
@@ -27,7 +27,7 @@
         <Grid Grid.Row="2">
             <StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
-                    <TextBlock Text="Id Categoria" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                    <TextBlock Text="Id Categoria" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
                     <TextBox Width="200" FontSize="30"  VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <Button Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
                     <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>

@@ -16,15 +16,14 @@ using System.Windows.Shapes;
 namespace _01_RestauranteLasBrasas
 {
     /// <summary>
-    /// Lógica de interacción para UserControlInventario.xaml
+    /// Lógica de interacción para UserControlCarg.xaml
     /// </summary>
-    public partial class UserControlInventario : UserControl
+    public partial class UserControlCarg : UserControl
     {
-        public UserControlInventario()
+        public UserControlCarg()
         {
             InitializeComponent();
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             (this.Parent as Grid).Children.Remove(this);

@@ -20,20 +20,23 @@
                 <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
             </Button>
         </Grid>
-        <StackPanel Grid.Row="2" Margin="20" HorizontalAlignment="Center">
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Usuario   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                <TextBox x:Name="Usuario" Background="White" Width="300"/>
-                <Button Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="15" Width="90"  BorderBrush="Blue"/>
+        <StackPanel Grid.Row="2" Margin="20"  >
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Usuario                 " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                <TextBox x:Name="Usuario" Background="White" Width="200"/>
+                <Button x:Name="btnBuscar" Content="Buscar" Margin="10,0,0,0" FontSize="15" Width="90" />
+                <TextBlock Text="Contraseña           " VerticalAlignment="Center" FontSize="20" Foreground="Black" Margin="30,0,0,0"/>
+                <TextBox x:Name="Apellido" Background="White" Width="200" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <TextBlock Text="Contraseña    " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                <TextBox x:Name="Apellido" Background="White" Width="400" />
+                <TextBlock Text="Tipo de usuario    " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                <ComboBox x:Name="Nombre" Background="White" Width="200"/>
+                <TextBlock Text="Empleado             " VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="130,0,0,0"/>
+                <ComboBox x:Name="ÌdEmpleado" Background="White" Width="200"/>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <TextBlock Text="Tipo de usuario" VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                <ComboBox x:Name="Nombre" Background="White" Width="400"/>
-            </StackPanel>
-            </StackPanel>
+
+            <DataGrid Height="200" Margin="0,30,0,0"/>
+        </StackPanel>
     </Grid>
 </UserControl>

@@ -1,10 +1,10 @@
-﻿<UserControl x:Class="_01_RestauranteLasBrasas.UserControlCarga"
+﻿<UserControl x:Class="_01_RestauranteLasBrasas.UserControlCarg"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="540" d:DesignWidth="1010"
              >
@@ -27,20 +27,20 @@
         <Grid Grid.Row="2">
             <StackPanel  Grid.Row="0" VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Codigo" FontSize="25"/>
-                <TextBox x:Name="txtCodigo" Width="300" FontSize="30"/>
-                
-                <TextBlock Text="Descripcion" FontSize="25" Margin="30,0,0,0"/>
-                <TextBox x:Name="txtDescripcion" Width="300" FontSize="30"/>
+                    <TextBlock Text="Codigo" FontSize="25" Foreground="Black"/>
+                    <TextBox x:Name="txtCodigo" Width="300" FontSize="30"/>
+
+                    <TextBlock Text="Descripcion" FontSize="25" Margin="30,0,0,0" Foreground="Black"/>
+                    <TextBox x:Name="txtDescripcion" Width="300" FontSize="30"/>
                 </StackPanel>
                 <DataGrid Height="200" Margin="0,10,0,0"/>
                 <StackPanel Orientation="Horizontal">
-                    <Button Content="Agregar" Margin="20" Width="150"/>
-                    <Button Content="Modificar"  Margin="20" Width="150"/>
-                    <Button Content="Eliminar" Margin="20" Width="150"/>
+                    <Button x:Name="btnAgregar" Content="Agregar" Margin="20" Width="150"/>
+                    <Button x:Name="btnModificar" Content="Modificar"  Margin="20" Width="150"/>
+                    <Button x:Name="btnEliminar" Content="Eliminar" Margin="20" Width="150"/>
                 </StackPanel>
             </StackPanel>
-       
+
         </Grid>
 
     </Grid>

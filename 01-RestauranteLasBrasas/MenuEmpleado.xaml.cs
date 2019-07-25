@@ -48,8 +48,16 @@ namespace _01_RestauranteLasBrasas
                     usc = new UserControlHistorial();
                     GridMain.Children.Add(usc);
                     break;
-                case "ItemInventario":
-                    usc = new UserControlInventario();
+                case "ItemCategoria":
+                    usc = new UserControlCategoria();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemClientes":
+                    usc = new UserControlClientes();
+                    GridMain.Children.Add(usc);
+                    break;
+                case "ItemProducto":
+                    usc = new UserControlProducto();
                     GridMain.Children.Add(usc);
                     break;
                 default:

@@ -33,7 +33,7 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Identidad   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
                         <TextBox x:Name="Identidad" Background="White" Width="300"/>
-                        <Button Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="15" Width="90"  BorderBrush="Blue"/>
+                        <Button x:Name="Buscar" Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="15" Width="90"  BorderBrush="Blue"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Apellido     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
@@ -45,8 +45,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Sexo          " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <RadioButton Content="Femenino" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        <RadioButton Content="Masculino" FontSize="15" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                        <ComboBox FontSize="15" Width="300" VerticalAlignment="Center" Margin="10,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Fecha de nacimiento" VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
@@ -68,8 +67,8 @@
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <Image Source="C:\Users\Usuario\source\repos\01-RestauranteLasBrasas4\01-RestauranteLasBrasas\Recursos\User.png" Width="300"/>
-                <Button Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" />
+                <Image Source="Recursos/User.png" Width="300"/>
+                <Button x:Name="Agregar" Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" />
             </StackPanel>
            
         </Grid>

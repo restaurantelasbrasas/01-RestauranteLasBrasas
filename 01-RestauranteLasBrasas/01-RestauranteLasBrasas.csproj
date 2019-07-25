@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -79,8 +76,8 @@
     <Compile Include="MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlCargo.xaml.cs">
-      <DependentUpon>UserControlCargo.xaml</DependentUpon>
+    <Compile Include="UserControlCarg.xaml.cs">
+      <DependentUpon>UserControlCarg.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlCategoria.xaml.cs">
       <DependentUpon>UserControlCategoria.xaml</DependentUpon>
@@ -96,9 +93,6 @@
     </Compile>
     <Compile Include="UserControlHistorial.xaml.cs">
       <DependentUpon>UserControlHistorial.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlInventario.xaml.cs">
-      <DependentUpon>UserControlInventario.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlProducto.xaml.cs">
       <DependentUpon>UserControlProducto.xaml</DependentUpon>
@@ -136,7 +130,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlCargo.xaml">
+    <Page Include="UserControlCarg.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -157,10 +151,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControlHistorial.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="UserControlInventario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

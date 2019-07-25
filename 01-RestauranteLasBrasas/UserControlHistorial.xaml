@@ -21,10 +21,10 @@
                 <TextBlock Text="a" FontSize="30" Foreground="Black"/>
                 <DatePicker Width="100" Height="30" Margin="30,0,30,0"/>
                 <ComboBox IsEditable="True" IsReadOnly="True" Text="Tipo de historial " FontSize="20"   />
-                <Button Content="Listar" Width="100" Margin="30,0,0,0"/>
+                <Button x:Name="btnListar" Content="Listar" Width="100" Margin="30,0,0,0"/>
             </StackPanel>
-            <Grid Background="#FFAE9A8B" Width="900" Height="300" HorizontalAlignment="Left" Margin="50,0,50,50">
-                </Grid>
+            <DataGrid Width="900" Height="300" HorizontalAlignment="Left" Margin="50,0,50,50">
+                </DataGrid>
         </StackPanel>
 
 
