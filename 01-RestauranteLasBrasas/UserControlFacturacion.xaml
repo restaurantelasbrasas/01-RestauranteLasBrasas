@@ -26,17 +26,17 @@
         <StackPanel Grid.Row="2" Margin="50,0,50,0" Orientation="Vertical">
             <StackPanel Orientation="Horizontal" >
                 <TextBlock Text="Venta No~" VerticalAlignment="Center" FontSize="20" Foreground="Black" />
-                <TextBox x:Name="Identidad" Background="White" Width="200" Margin="10,0,0,0"/>
+                <TextBox x:Name="Identidad" Background="White" Width="200" Margin="10,0,0,0" FontSize="20" Foreground="Black" />
                 <TextBlock Text="Empleado" VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="10,0,0,0"/>
-                <TextBox x:Name="Fecha" Background="White" Width="200" Margin="10,0,0,0"/>
+                <TextBox x:Name="Fecha" Background="White" Width="200" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
                 <TextBlock Text="Fecha" VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="10,0,0,0"/>
-                <DatePicker Width="200" Margin="10,0,0,0"/>
+                <DatePicker Width="200" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
                 <TextBlock Text="Id Cliente  " VerticalAlignment="Center" FontSize="20" Foreground="Black" />
-                <TextBox x:Name="IdCliente" Background="White" Width="200" Margin="10,0,0,0"/>
+                <TextBox x:Name="IdCliente" Background="White" Width="200" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
                 <TextBlock Text="Documento No~" VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="10,0,0,0"/>
-                <TextBox x:Name="Doc" Background="White" Width="200" Margin="10,0,0,0"/>
+                <TextBox x:Name="Doc" Background="White" Width="200" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
             </StackPanel>
 
             <Grid Height="270" Margin="0,20,0,0">
@@ -45,13 +45,13 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <StackPanel  Grid.Column="0" >
-                    <TextBox Text="Buscar producto" FontSize="20" Width="400"/>
-                    <ListBox x:Name="Productos" Height="170" Background="White" Margin="0,10,0,0"/>
+                    <TextBox Text="Buscar producto" FontSize="20" Width="400" Foreground="Black"/>
+                    <ListBox x:Name="Productos" Height="170" Background="White" Margin="0,10,0,0" FontSize="20" Foreground="Black"/>
                     <Button x:Name="btnAnadir" Content="Añadir"  Width="100" Margin="0,10,0,0"/>
                 </StackPanel>
                 <StackPanel  Grid.Column="1"  Margin="10,0,0,0">
                     <TextBlock Text="Factura" FontSize="20"  Margin="20,10,0,0"/>
-                    <ListBox x:Name="Factura" Height="170" Background="White" Margin="0,9,0,0"/>
+                    <ListBox x:Name="Factura" Height="170" Background="White" Margin="0,9,0,0" FontSize="20" Foreground="Black"/>
                     <Button x:Name="btnFacturar" Content="Facturar"  Width="100" Margin="0,10,0,0"/>
                 </StackPanel>
             </Grid>

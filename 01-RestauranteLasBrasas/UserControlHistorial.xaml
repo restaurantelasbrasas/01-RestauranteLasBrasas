@@ -17,13 +17,13 @@
         <StackPanel Orientation="Vertical" Height="490" VerticalAlignment="Bottom" >
             <StackPanel Height="50" VerticalAlignment="Top" Margin="50" Orientation="Horizontal">
                 <TextBlock Text="Fecha:" FontSize="30" Foreground="Black"/>
-                <DatePicker Width="100" Height="30" Margin="30,0,30,0"/>
+                <DatePicker Width="100" Height="30" Margin="30,0,30,0" FontSize="20" Foreground="Black"/>
                 <TextBlock Text="a" FontSize="30" Foreground="Black"/>
-                <DatePicker Width="100" Height="30" Margin="30,0,30,0"/>
-                <ComboBox IsEditable="True" IsReadOnly="True" Text="Tipo de historial " FontSize="20"   />
+                <DatePicker Width="100" Height="30" Margin="30,0,30,0" FontSize="20" Foreground="Black"/>
+                <ComboBox IsEditable="True" IsReadOnly="True" Text="Tipo de historial " FontSize="20" Foreground="Black"   />
                 <Button x:Name="btnListar" Content="Listar" Width="100" Margin="30,0,0,0"/>
             </StackPanel>
-            <DataGrid Width="900" Height="300" HorizontalAlignment="Left" Margin="50,0,50,50">
+            <DataGrid Width="900" Height="300" HorizontalAlignment="Left" Margin="50,0,50,50" Foreground="Black">
                 </DataGrid>
         </StackPanel>
 

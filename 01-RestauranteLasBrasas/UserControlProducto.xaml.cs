@@ -29,5 +29,14 @@ namespace _01_RestauranteLasBrasas
         {
             (this.Parent as Grid).Children.Remove(this);
         }
+
+        private void BtnGestionar_Click(object sender, RoutedEventArgs e)
+        {
+
+            WindowGestionarProducto win2 = new WindowGestionarProducto();
+                win2.Show();
+
+            
+        }
     }
 }

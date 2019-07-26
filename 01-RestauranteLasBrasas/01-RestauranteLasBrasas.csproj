@@ -64,6 +64,7 @@
     <Compile Include="Ayuda.xaml.cs">
       <DependentUpon>Ayuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Clase_Conectar.cs" />
     <Compile Include="Fondo.xaml.cs">
       <DependentUpon>Fondo.xaml</DependentUpon>
     </Compile>

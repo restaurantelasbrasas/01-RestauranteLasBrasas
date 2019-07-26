@@ -28,12 +28,12 @@
             <StackPanel  Grid.Row="0" VerticalAlignment="Center"  HorizontalAlignment="Center" Orientation="Vertical">
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Codigo" FontSize="25" Foreground="Black"/>
-                    <TextBox x:Name="txtCodigo" Width="300" FontSize="30"/>
+                    <TextBox x:Name="txtCodigo" Width="300" FontSize="20" Foreground="Black"/>
 
                     <TextBlock Text="Descripcion" FontSize="25" Margin="30,0,0,0" Foreground="Black"/>
-                    <TextBox x:Name="txtDescripcion" Width="300" FontSize="30"/>
+                    <TextBox x:Name="txtDescripcion" Width="300" FontSize="20" Foreground="Black"/>
                 </StackPanel>
-                <DataGrid Height="200" Margin="0,10,0,0"/>
+                <DataGrid Height="200" Margin="0,10,0,0" Foreground="Black"/>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="btnAgregar" Content="Agregar" Margin="20" Width="150"/>
                     <Button x:Name="btnModificar" Content="Modificar"  Margin="20" Width="150"/>

@@ -32,43 +32,43 @@
                 <StackPanel Width="550" Height="398" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Identidad   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="Identidad" Background="White" Width="300"/>
+                        <TextBox x:Name="Identidad" Background="White" Width="300"  FontSize="20" Foreground="Black"/>
                         <Button x:Name="Buscar" Content="Buscar" Background="#FF1344C5" Margin="10,0,0,0" FontSize="15" Width="90"  BorderBrush="Blue"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Apellido     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="Apellido" Background="White" Width="400" />
+                        <TextBox x:Name="Apellido" Background="White" Width="400" FontSize="20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Nombre     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="Nombre" Background="White" Width="400"/>
+                        <TextBox x:Name="Nombre" Background="White" Width="400" FontSize="20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Sexo          " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <ComboBox FontSize="15" Width="300" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        <ComboBox x:Name="cbSexo" FontSize="20" Foreground="Black" Width="300" VerticalAlignment="Center" Margin="10,0,0,0" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Fecha de nacimiento" VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <DatePicker Width="310" Margin="10,0,0,0"/>
+                        <DatePicker x:Name="Fecha" Width="310" Margin="10,0,0,0" FontSize="20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Direccion   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="Direccion" Background="White" Width="400" />
+                        <TextBox x:Name="Direccion" Background="White" Width="400" FontSize="20" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Estado Civil " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <ComboBox IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="380"/>
+                        <ComboBox x:Name="EstadoCivil" IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="380" Foreground="Black"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Cargo        " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <ComboBox IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="390"/>
+                        <ComboBox x:Name="Cargo" IsEditable="True" IsReadOnly="True" Text="Seleccione una opcion" FontSize="20"  Margin="10" Width="390" Foreground="Black"/>
                     </StackPanel>
 
                 </StackPanel>
             </StackPanel>
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <Image Source="Recursos/User.png" Width="300"/>
-                <Button x:Name="Agregar" Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" />
+                <Button x:Name="Agregar" Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" Margin="111,0,98.6,0" Click="Agregar_Click" />
             </StackPanel>
            
         </Grid>

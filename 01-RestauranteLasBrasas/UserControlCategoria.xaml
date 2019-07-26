@@ -28,16 +28,20 @@
             <StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
                     <TextBlock Text="Id Categoria" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-                    <TextBox Width="200" FontSize="30"  VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                    <TextBox Width="200" FontSize="30" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <Button Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
                     <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>
                 </StackPanel>
                 <StackPanel>
-                    <DataGrid Margin="20"  Height="290"/>
+                    <DataGrid Margin="20"  Height="290" Foreground="Black" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="BtnGestionar" Content="Gestionar" Width="200"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnAgregar" Content="Agregar" Margin="20,0,0,0" Width="150"/>
+                        <Button x:Name="btnModificar" Content="Modificar"  Margin="20,0,0,0" Width="150"/>
+                        <Button x:Name="btnEliminar" Content="Eliminar" Margin="20,0,0,0" Width="150"/>
+                    </StackPanel>
                 </StackPanel>
             </StackPanel>
         </Grid>
