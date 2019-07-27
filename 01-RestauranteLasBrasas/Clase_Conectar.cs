@@ -11,7 +11,7 @@ namespace _01_RestauranteLasBrasas
 {
     class Clase_Conectar
     {
-        private SqlConnection conexion;
+        public SqlConnection conexion;
         private int estado;
 
         public SqlConnection Conexion
@@ -43,7 +43,7 @@ namespace _01_RestauranteLasBrasas
                 }
                 if (conexion.State == ConnectionState.Closed)
                 {
-                    conexion.ConnectionString = string.Format(@"(local)\SQLEXPRESS; database =BD_RestauranteLasBrasas;integrated security = true;");
+                    conexion.ConnectionString = string.Format(@"DESKTOP-536T0JD\SQLEXPRESS; database =BD_RestauranteLasBrasas;integrated security = true;");
                     conexion.Open();
                     Estado = 1;
                 }

@@ -64,6 +64,11 @@
     <Compile Include="Ayuda.xaml.cs">
       <DependentUpon>Ayuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BD_RestauranteLasBrasasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Clase_Conectar.cs" />
     <Compile Include="Fondo.xaml.cs">
       <DependentUpon>Fondo.xaml</DependentUpon>
@@ -191,6 +196,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <Resource Include="Recursos\Calculator.ttf" />
+    <None Include="BD_RestauranteLasBrasasDataSet.xsc">
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_RestauranteLasBrasasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_RestauranteLasBrasasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_RestauranteLasBrasasDataSet.xss">
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
