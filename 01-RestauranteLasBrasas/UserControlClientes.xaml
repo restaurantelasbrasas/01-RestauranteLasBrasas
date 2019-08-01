@@ -32,7 +32,7 @@
                     <Button x:Name="BtnBuscar" Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
                     <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>
                 </StackPanel>
-                <DataGrid Height="250" Margin="20" Foreground="Black"/>
+                <DataGrid x:Name="ListarEmpleado" Height="250" Margin="20" Foreground="Black" SelectionChanged="ListarEmpleado_SelectionChanged"/>
                 <Button x:Name="BtnGestionar" Content="Gestionar" Width="200" Click="BtnGestionar_Click"/>
             </StackPanel>
         </Grid>

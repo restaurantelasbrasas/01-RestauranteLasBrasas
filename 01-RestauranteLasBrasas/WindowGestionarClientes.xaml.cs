@@ -44,9 +44,9 @@ namespace _01_RestauranteLasBrasas
                         command.Parameters.AddWithValue("@identidad", txtIdentidadCliente.Text);
                         command.Parameters.AddWithValue("@apellido", txtApellidoCliente.Text);
                         command.Parameters.AddWithValue("@nombre", txtNombreCliente.Text);
-                        command.Parameters.AddWithValue("@sexo", txtSexoCliente);//esto necesita revision
+                        command.Parameters.AddWithValue("@sexo", txtSexoCliente.Text);
                         command.Parameters.AddWithValue("@direccion", txtDireccionCliente.Text);
-                        command.Parameters.AddWithValue("@telefono", txtTelefonoCliente);
+                        command.Parameters.AddWithValue("@telefono", txtTelefonoCliente.Text);
                     }
                     MessageBox.Show("Registro agregado");
                 }

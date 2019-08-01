@@ -70,6 +70,7 @@
       <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clase_Conectar.cs" />
+    <Compile Include="Clase_Clientes.cs" />
     <Compile Include="Fondo.xaml.cs">
       <DependentUpon>Fondo.xaml</DependentUpon>
     </Compile>

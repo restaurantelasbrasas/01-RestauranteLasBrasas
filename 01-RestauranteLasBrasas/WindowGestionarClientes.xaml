@@ -26,7 +26,7 @@
             <StackPanel Grid.Column="0" VerticalAlignment="Center">
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Id Cliente      " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-                    <TextBox x:Name="txtIdCliente" Width="200" FontSize="20"  VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black" />
+                    <TextBox x:Name="txtIdCliente" Width="200" FontSize="20"  VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black" IsEnabled="False" />
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Identidad       " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>

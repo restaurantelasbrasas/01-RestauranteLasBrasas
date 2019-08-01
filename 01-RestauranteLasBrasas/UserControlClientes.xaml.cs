@@ -20,9 +20,16 @@ namespace _01_RestauranteLasBrasas
     /// </summary>
     public partial class UserControlClientes : UserControl
     {
+        Clase_Clientes clientes = new Clase_Clientes();
+
         public UserControlClientes()
         {
             InitializeComponent();
+        }
+        
+        public void UserControlCliente_Load(object sender, EventArgs e)
+        {
+            ListarEmpleado.DataContext = clientes.MostrarClientes();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -35,6 +42,11 @@ namespace _01_RestauranteLasBrasas
             WindowGestionarClientes win2 = new WindowGestionarClientes();
             win2.Show();
             
+        }
+
+        private void ListarEmpleado_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
