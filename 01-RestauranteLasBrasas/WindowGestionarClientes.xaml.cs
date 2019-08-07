@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace _01_RestauranteLasBrasas
 {
@@ -21,40 +22,39 @@ namespace _01_RestauranteLasBrasas
     /// </summary>
     public partial class WindowGestionarClientes : Window
     {
-        Clase_Conectar conexion = new Clase_Conectar();
+        private DataClasses1DataContext data;
         public WindowGestionarClientes()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
+
+            data = new DataClasses1DataContext(connectionString);
+            var cliente = from u in data.GetTable<Cliente>()
+                          select new { u.IdCliente, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Telefono, };
+            //dgCliente.ItemsSource = cliente.ToList();
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                conexion.AbrirConexion();
-                if (conexion.Estado == 1)
-                {
-                    string query = string.Format("MantenimientoDelCliente");
-                    SqlCommand command = new SqlCommand(query, conexion.Conexion);
-                    command.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter adaptador = new SqlDataAdapter(command);
+                Cliente cli = new Cliente();
+                cli.Identidad = txtIdentidadCliente.Text;
+                cli.Nombre = txtNombreCliente.Text;
+                cli.Apellido = txtApellidoCliente.Text;
+                cli.Direccion = txtDireccionCliente.Text;
+                cli.Telefono = txtTelefonoCliente.Text;
+                cli.Sexo = cbSexoCliente.Text;
+                
 
-                    using (adaptador)
-                    {
-                        command.Parameters.AddWithValue("@identidad", txtIdentidadCliente.Text);
-                        command.Parameters.AddWithValue("@apellido", txtApellidoCliente.Text);
-                        command.Parameters.AddWithValue("@nombre", txtNombreCliente.Text);
-                        command.Parameters.AddWithValue("@sexo", txtSexoCliente.Text);
-                        command.Parameters.AddWithValue("@direccion", txtDireccionCliente.Text);
-                        command.Parameters.AddWithValue("@telefono", txtTelefonoCliente.Text);
-                    }
-                    MessageBox.Show("Registro agregado");
-                }
+                data.Cliente.InsertOnSubmit(cli);
+                data.SubmitChanges();
+                //d.ItemsSource = data.Empleado;
+                MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                
             }
         }
     }

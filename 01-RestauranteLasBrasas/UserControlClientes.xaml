@@ -27,12 +27,11 @@
         <Grid Grid.Row="2">
             <StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
-                    <TextBlock Text="Id Cliente" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-                    <TextBox Width="200" FontSize="30"  VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-                    <Button x:Name="BtnBuscar" Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
-                    <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>
+                    <TextBlock Text="Identidad Cliente  " FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/> 
+                    <TextBox Name="txtIdentidad" Width="248" FontSize="30"  VerticalAlignment="Center"  Margin="10,0,0,0.6" Foreground="Black"/>
+                    <Button x:Name="BtnBuscar" Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0" Click="BtnBuscar_Click"/>
                 </StackPanel>
-                <DataGrid x:Name="ListarEmpleado" Height="250" Margin="20" Foreground="Black" SelectionChanged="ListarEmpleado_SelectionChanged"/>
+                <DataGrid x:Name="dgCliente" Height="250" Margin="20" Foreground="Black" />
                 <Button x:Name="BtnGestionar" Content="Gestionar" Width="200" Click="BtnGestionar_Click"/>
             </StackPanel>
         </Grid>

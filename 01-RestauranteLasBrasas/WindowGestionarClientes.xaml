@@ -45,7 +45,10 @@
             <StackPanel Grid.Column="1" VerticalAlignment="Center">
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Sexo        " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-                    <TextBox x:Name="txtSexoCliente" Width="200" FontSize="20"  VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                    <ComboBox x:Name="cbSexoCliente" Width="200" FontSize="20"  VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black">
+                        <ComboBoxItem Content="F"/>
+                        <ComboBoxItem Content="M"/>
+                    </ComboBox>
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Direccion" FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_RestauranteLasBrasas" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-536T0JD\SQLEXPRESS;Initial Catalog=BD_RestauranteLasBrasas;Integrated Security=True" SettingsObjectName="_01_RestauranteLasBrasas.Properties.Settings" SettingsPropertyName="BD_RestauranteLasBrasasConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="Restaurante.Cargo" Member="Cargo">
+    <Type Name="Cargo">
+      <Column Name="IdCargo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="Cargo_Empleado" Member="Empleado" ThisKey="IdCargo" OtherKey="IdCargo" Type="Empleado" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Categoria" Member="Categoria">
+    <Type Name="Categoria">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="Categoria_Producto" Member="Producto" ThisKey="IdCategoria" OtherKey="IdCategoria" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Cliente" Member="Cliente">
+    <Type Name="Cliente">
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Identidad" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Telefono" Type="System.String" DbType="VarChar(12)" CanBeNull="true" />
+      <Association Name="Cliente_Venta" Member="Venta" ThisKey="IdCliente" OtherKey="IdCliente" Type="Venta" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.DetalleVenta" Member="DetalleVenta">
+    <Type Name="DetalleVenta">
+      <Column Name="IdDetalleVenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdVenta" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioUnitario" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="SubTotal" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="Producto_DetalleVenta" Member="Producto" ThisKey="IdProducto" OtherKey="IdProducto" Type="Producto" IsForeignKey="true" />
+      <Association Name="Venta_DetalleVenta" Member="Venta" ThisKey="IdVenta" OtherKey="IdVenta" Type="Venta" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Empleado" Member="Empleado">
+    <Type Name="Empleado">
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCargo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Identidad" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaNac" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoCivil" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Association Name="Empleado_Usuario" Member="Usuario" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Usuario" />
+      <Association Name="Empleado_Venta" Member="Venta" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Venta" />
+      <Association Name="Cargo_Empleado" Member="Cargo" ThisKey="IdCargo" OtherKey="IdCargo" Type="Cargo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Producto" Member="Producto">
+    <Type Name="Producto">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="Stock" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioVenta" Type="System.Decimal" DbType="Decimal(6,2) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="Producto_DetalleVenta" Member="DetalleVenta" ThisKey="IdProducto" OtherKey="IdProducto" Type="DetalleVenta" />
+      <Association Name="Categoria_Producto" Member="Categoria" ThisKey="IdCategoria" OtherKey="IdCategoria" Type="Categoria" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Usuario" Member="Usuario">
+    <Type Name="Usuario">
+      <Column Name="IdUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(12) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoUsuario" Type="System.String" DbType="Char(15) NOT NULL" CanBeNull="false" />
+      <Association Name="Empleado_Usuario" Member="Empleado" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Empleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Restaurante.Venta" Member="Venta">
+    <Type Name="Venta">
+      <Column Name="IdVenta" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NroDocumento" Type="System.String" DbType="Char(7) NOT NULL" CanBeNull="false" />
+      <Column Name="Total" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVenta" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Venta_DetalleVenta" Member="DetalleVenta" ThisKey="IdVenta" OtherKey="IdVenta" Type="DetalleVenta" />
+      <Association Name="Cliente_Venta" Member="Cliente" ThisKey="IdCliente" OtherKey="IdCliente" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Empleado_Venta" Member="Empleado" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Empleado" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
