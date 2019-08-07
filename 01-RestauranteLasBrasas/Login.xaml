@@ -40,6 +40,6 @@
             <Button x:Name="salir" Width="100" VerticalAlignment="Bottom"  Content="SALIR" Margin="5"  Background="#2A2D34" BorderBrush="#2A2D34" Click="Salir_Click" Foreground="White"/>
         </StackPanel>
 
-        <Image Source="Logo/Logo Resturante Las Brasas.png" Width="225" Height="200" VerticalAlignment="Top" Margin="10"/>
+        <Image Source="Recursos\Logo Resturante Las Brasas.png" Width="225" Height="200" VerticalAlignment="Top" Margin="10"/>
     </Grid>
 </Window>

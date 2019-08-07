@@ -30,7 +30,7 @@
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010">
-            <Image Source="Logo/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Margin="255,104" Grid.RowSpan="2"/>
+            <Image Source="Recursos/Logo Resturante Las Brasas.png" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Margin="255,104" Grid.RowSpan="2"/>
         </Grid>
         <Grid Height="60" VerticalAlignment="Top" Background="#FF1344C5">
             <Grid.Effect>
@@ -40,7 +40,7 @@
                 <TextBlock Text="Empleado" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10">
                     <StackPanel Width="150">
-                        <Button x:Name="BtnCerrarSesion" Content="Salir" Click="BtnCerrarSesion_Click"/>
+                        <Button x:Name="BtnCerrarSesion" Content="Cerrar Sesion" Click="BtnCerrarSesion_Click"/>
                         <Button x:Name="BtnSalir" Content="Salir" Click="BtnSalir_Click"/>
                     </StackPanel>
                 </materialDesign:PopupBox>
@@ -74,27 +74,38 @@
                     <Button x:Name="ButtonCerrarMenu" Visibility="Collapsed" Height="60" Width="60" Margin="0,1,5,0" HorizontalAlignment="Right" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF31577E" Click="ButtonCerrarMenu_Click" Grid.Row="1">
                         <materialDesign:PackIcon Kind="ArrowLeft" Width="25" Height="25"/>
                     </Button>
-                    <Image Source="Logo/User.png" Height="100" VerticalAlignment="Bottom" Grid.Row="1"/>
+                    <Image Source="Recursos/User.png" Height="100" VerticalAlignment="Bottom" Grid.Row="1"/>
 
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="White" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListViewMenu_SelectionChanged" HorizontalAlignment="Center">
-
-                    <ListViewItem x:Name="ItemFacturacion" Height="60">
-                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
-                            <materialDesign:PackIcon Kind="Coin" Height="25" Width="25" Margin="10"/>
+                    <ListViewItem x:Name="ItemFacturacion" Height="55">
+                        <StackPanel Orientation="Horizontal" Background="#ee7600">
+                            <materialDesign:PackIcon Kind="Coin" Height="20" Width="20" Margin="10"/>
                             <TextBlock Text="Facturacion" VerticalAlignment="Center" Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemHistorial" Height="60">
-                        <StackPanel  Orientation="Horizontal" Background="#FFF5C72A">
-                            <materialDesign:PackIcon Kind="History" Height="25" Width="25" Margin="10"/>
+                    <ListViewItem x:Name="ItemHistorial" Height="55">
+                        <StackPanel  Orientation="Horizontal" Background="#ee7600">
+                            <materialDesign:PackIcon Kind="History" Height="20" Width="20" Margin="10"/>
                             <TextBlock Text="Historial" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemInventario" Height="60">
-                        <StackPanel Orientation="Horizontal" Background="#FFF5C72A">
-                            <materialDesign:PackIcon Kind="Food" Height="25" Width="25" Margin="10"/>
-                            <TextBlock Text="Inventario" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                    <ListViewItem x:Name="ItemCategoria" Height="55">
+                        <StackPanel  Orientation="Horizontal" Background="#ee7600">
+                            <materialDesign:PackIcon Kind="Class" Height="20" Width="20" Margin="10"/>
+                            <TextBlock Text="Categoria" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemClientes" Height="55">
+                        <StackPanel  Orientation="Horizontal" Background="#ee7600">
+                            <materialDesign:PackIcon Kind="Face" Height="20" Width="20" Margin="10"/>
+                            <TextBlock Text="Clientes" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
+                        </StackPanel>
+                    </ListViewItem>
+                    <ListViewItem x:Name="ItemProducto" Height="55">
+                        <StackPanel  Orientation="Horizontal" Background="#ee7600">
+                            <materialDesign:PackIcon Kind="ShoppingBasket" Height="20" Width="20" Margin="10"/>
+                            <TextBlock Text="Producto" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
                 </ListView>

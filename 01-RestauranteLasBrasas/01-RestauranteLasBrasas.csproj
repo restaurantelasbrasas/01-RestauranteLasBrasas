@@ -35,9 +35,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
-    </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
@@ -67,6 +64,13 @@
     <Compile Include="Ayuda.xaml.cs">
       <DependentUpon>Ayuda.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BD_RestauranteLasBrasasDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clase_Conectar.cs" />
+    <Compile Include="Clase_Clientes.cs" />
     <Compile Include="Fondo.xaml.cs">
       <DependentUpon>Fondo.xaml</DependentUpon>
     </Compile>
@@ -79,7 +83,15 @@
     <Compile Include="MenuEmpleado.xaml.cs">
       <DependentUpon>MenuEmpleado.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Productos.cs" />
+    <Compile Include="UserControlCarg.xaml.cs">
+      <DependentUpon>UserControlCarg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlCategoria.xaml.cs">
+      <DependentUpon>UserControlCategoria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlClientes.xaml.cs">
+      <DependentUpon>UserControlClientes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlEmpleados.xaml.cs">
       <DependentUpon>UserControlEmpleados.xaml</DependentUpon>
     </Compile>
@@ -89,11 +101,17 @@
     <Compile Include="UserControlHistorial.xaml.cs">
       <DependentUpon>UserControlHistorial.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControlInventario.xaml.cs">
-      <DependentUpon>UserControlInventario.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UserControlProducto.xaml.cs">
       <DependentUpon>UserControlProducto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUsuarios.xaml.cs">
+      <DependentUpon>UserControlUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowGestionarClientes.xaml.cs">
+      <DependentUpon>WindowGestionarClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WindowGestionarProducto.xaml.cs">
+      <DependentUpon>WindowGestionarProducto.xaml</DependentUpon>
     </Compile>
     <Page Include="Ayuda.xaml">
       <SubType>Designer</SubType>
@@ -119,6 +137,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControlCarg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlCategoria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControlEmpleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -131,11 +161,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlInventario.xaml">
+    <Page Include="UserControlProducto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControlProducto.xaml">
+    <Page Include="UserControlUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowGestionarClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowGestionarProducto.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,6 +196,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="Recursos\Calculator.ttf" />
+    <None Include="BD_RestauranteLasBrasasDataSet.xsc">
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BD_RestauranteLasBrasasDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD_RestauranteLasBrasasDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD_RestauranteLasBrasasDataSet.xss">
+      <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -168,21 +218,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logo\Logo Resturante Las Brasas.png" />
+    <Resource Include="Recursos\Logo Resturante Las Brasas.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Logo\User.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logo\GridFactura.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Logo\add.png" />
-    <Resource Include="Logo\del.png" />
-    <Resource Include="Logo\ed.png" />
-    <Resource Include="Logo\pr.png" />
-    <Resource Include="Logo\sa.png" />
-    <Resource Include="Logo\sea.png" />
+    <Resource Include="Recursos\User.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Ayuda\" />

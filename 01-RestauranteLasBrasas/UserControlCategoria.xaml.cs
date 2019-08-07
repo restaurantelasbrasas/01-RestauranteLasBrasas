@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace _01_RestauranteLasBrasas
 {
     /// <summary>
-    /// Lógica de interacción para UserControlInventario.xaml
+    /// Lógica de interacción para UserControlCategoria.xaml
     /// </summary>
-    public partial class UserControlInventario : UserControl
+    public partial class UserControlCategoria : UserControl
     {
-        public UserControlInventario()
+        public UserControlCategoria()
         {
             InitializeComponent();
         }

@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="_01_RestauranteLasBrasas.UserControlUsuarios"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="1010">
+    <Grid Background="#FFDEDEDE">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="400"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" Grid.Row="0">
+            <TextBlock Text="USUARIOS" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground="White" />
+            <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
+                <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
+            </Button>
+        </Grid>
+        <StackPanel Grid.Row="2" Margin="20"  >
+
+            <StackPanel Orientation="Horizontal" >
+                <TextBlock Text="Usuario                 " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                <TextBox x:Name="Usuario" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+                <Button x:Name="btnBuscar" Content="Buscar" Margin="10,0,0,0" FontSize="15" Width="90" />
+                <TextBlock Text="Contraseña           " VerticalAlignment="Center" FontSize="20" Foreground="Black" Margin="30,0,0,0"/>
+                <TextBox x:Name="Apellido" Background="White" Width="200" FontSize="20" Foreground="Black" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                <TextBlock Text="Tipo de usuario    " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
+                <ComboBox x:Name="Nombre" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+                <TextBlock Text="Empleado             " VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="130,0,0,0"/>
+                <ComboBox x:Name="ÌdEmpleado" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+            </StackPanel>
+
+            <DataGrid Height="200" Margin="0,30,0,0" Foreground="Black"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
