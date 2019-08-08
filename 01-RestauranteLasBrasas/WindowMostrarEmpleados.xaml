@@ -31,7 +31,7 @@
                     <TextBox Name="txtIdentidad" Width="248" FontSize="30"  VerticalAlignment="Center"  Margin="10,0,0,0.6" Foreground="Black"/>
                     <Button x:Name="BtnBuscar" Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0" Click="BtnBuscar_Click"/>
                 </StackPanel>
-                <DataGrid x:Name="dgEmpleado" Height="250" Margin="20" Foreground="Black" />
+                <DataGrid BorderBrush="Black" BorderThickness="0.6" x:Name="dgEmpleado"  HorizontalAlignment="Left" Width="970" Height="250" Margin="20" VerticalAlignment="Top" HorizontalGridLinesBrush="#FF838383" VerticalGridLinesBrush="#FF838383" Foreground="Black" />
                 <Button x:Name="BtnLimpiar" Content="Limpiar" Width="200" Click="BtnLimpiar_Click"/>
             </StackPanel>
         </Grid>

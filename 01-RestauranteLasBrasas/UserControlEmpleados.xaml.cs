@@ -58,8 +58,14 @@ namespace _01_RestauranteLasBrasas
                 //    emp.Sexo = 'M';                
                 //else if(cbSexo.Text == "F")
                 //    emp.Sexo = 'F';
-                emp.IdCargo = Convert.ToInt32(txtCargo.Text);
-                //emp.EstadoCivil = Convert.ToChar(cbEstadoCivil);
+                //emp.IdCargo = Convert.ToInt32(txtCargo.Text);
+
+                if (cmbCargo.Text == "Administrador")
+                    emp.IdCargo = 1;
+                else if (cmbCargo.Text == "Gerente")
+                    emp.IdCargo = 2;
+                if (cmbCargo.Text == "Empleado")
+                    emp.IdCargo = 3;
 
                 if (cbEstadoCivil.Text == "Soltero")
                     emp.EstadoCivil = 'S';
@@ -84,12 +90,13 @@ namespace _01_RestauranteLasBrasas
         private void Limpiar()
         {
             txtApellido.Clear();
-            txtCargo.Clear();
+            cmbCargo.SelectedIndex = -1;
             txtDireccion.Clear();
             txtIdentidad.Clear();
             txtNombre.Clear();
             cbEstadoCivil.SelectedIndex = -1;
             cbSexo.SelectedIndex = -1;
+            dtFecha.SelectedDate = DateTime.Now;
 
             txtIdentidad.Focus();
         }

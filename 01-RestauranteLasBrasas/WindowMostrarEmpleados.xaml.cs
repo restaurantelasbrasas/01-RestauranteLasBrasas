@@ -37,7 +37,7 @@ namespace _01_RestauranteLasBrasas
                 data = new DataClasses1DataContext();
                 var empleado = from u in data.Empleado
                                join c in data.Cargo on u.IdCargo equals c.IdCargo
-                               select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.FechaNac, u.EstadoCivil, u.Sexo, c.Descripcion };
+                               select new { ID=u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.FechaNac, u.EstadoCivil, u.Sexo, Cargo=c.Descripcion };
                 dgEmpleado.ItemsSource = empleado.ToList();
             }
             catch (Exception ex)
@@ -59,7 +59,7 @@ namespace _01_RestauranteLasBrasas
                 var empleado = from u in data.Empleado
                                join c in data.Cargo on u.IdCargo equals c.IdCargo
                                where u.Identidad.Contains(txtIdentidad.Text)
-                              select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.FechaNac, u.EstadoCivil, u.Sexo, c.Descripcion };
+                              select new { ID=u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, FechaNacimientot=u.FechaNac, u.EstadoCivil, u.Sexo, Cargo=c.Descripcion };
                 if (empleado == null)
                 { MessageBox.Show("no existe"); }//
                 dgEmpleado.ItemsSource = empleado.ToList();

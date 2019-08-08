@@ -347,6 +347,12 @@ BEGIN CATCH
 END CATCH
 Go
 
+Insert Into Restaurante.Cargo (Descripcion)
+Values	('Administrador'),
+		('Gerente'),
+		('Empleado');
+
+
 EXEC RegistrarDetalleVenta 1,1,2,100,200
 GO
 SELECT * FROM Restaurante.VENTA

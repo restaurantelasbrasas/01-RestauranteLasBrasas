@@ -68,7 +68,11 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Cargo        " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="txtCargo" FontSize="20"  Margin="10" Width="390" Background="White" Foreground="Black"/>
+                        <ComboBox x:Name="cmbCargo" FontSize="20" Foreground="Black" Width="400" VerticalAlignment="Center" Margin="10,0,0,0">
+                            <ComboBoxItem Content="Administrador"/>
+                            <ComboBoxItem Content="Gerente"/>
+                            <ComboBoxItem Content="Empleado"/>
+                        </ComboBox>
                     </StackPanel>
 
                 </StackPanel>
