@@ -44,7 +44,7 @@ namespace _01_RestauranteLasBrasas
                 cli.Apellido = txtApellidoCliente.Text;
                 cli.Direccion = txtDireccionCliente.Text;
                 cli.Telefono = txtTelefonoCliente.Text;
-                cli.Sexo = cbSexoCliente.Text;
+                cli.Sexo = cmbSexoCliente.Text;
                 
 
                 data.Cliente.InsertOnSubmit(cli);
@@ -56,6 +56,22 @@ namespace _01_RestauranteLasBrasas
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtApellidoCliente.Clear();
+            txtDireccionCliente.Clear();
+            txtIdCliente.Clear();
+            txtIdentidadCliente.Clear();
+            txtNombreCliente.Clear();
+            txtTelefonoCliente.Clear();
+            cmbSexoCliente.SelectedIndex = -1;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

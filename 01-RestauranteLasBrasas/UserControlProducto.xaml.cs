@@ -23,7 +23,11 @@ namespace _01_RestauranteLasBrasas
         public UserControlProducto()
         {
             InitializeComponent();
-        }
+        }       
 
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtProducto.Clear();
+        }
     }
 }

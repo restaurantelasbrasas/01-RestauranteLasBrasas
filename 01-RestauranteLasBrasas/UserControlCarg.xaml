@@ -38,6 +38,7 @@
                     <Button x:Name="btnAgregar" Content="Agregar" Margin="20" Width="150"/>
                     <Button x:Name="btnModificar" Content="Modificar"  Margin="20" Width="150"/>
                     <Button x:Name="btnEliminar" Content="Eliminar" Margin="20" Width="150"/>
+                    <Button x:Name="BtnLimpiar" Content="Limpiar" Width="130" Click="BtnLimpiar_Click" Margin="130,0,0,0"/>
                 </StackPanel>
             </StackPanel>
 

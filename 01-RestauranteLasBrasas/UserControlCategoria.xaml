@@ -28,7 +28,7 @@
             <StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
                     <TextBlock Text="Id Categoria" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-                    <TextBox Width="200" FontSize="30" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                    <TextBox Name="txtcategoria" Width="200" FontSize="30" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <Button Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
                     <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>
                 </StackPanel>
@@ -41,6 +41,7 @@
                         <Button x:Name="btnAgregar" Content="Agregar" Margin="20,0,0,0" Width="150"/>
                         <Button x:Name="btnModificar" Content="Modificar"  Margin="20,0,0,0" Width="150"/>
                         <Button x:Name="btnEliminar" Content="Eliminar" Margin="20,0,0,0" Width="150"/>
+                        <Button x:Name="BtnLimpiar" Content="Limpiar" Width="140" Click="BtnLimpiar_Click" Margin="20,0,20,0"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

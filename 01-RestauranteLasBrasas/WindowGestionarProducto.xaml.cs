@@ -87,5 +87,21 @@ namespace _01_RestauranteLasBrasas
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtIdProducto.Clear();
+            txtMarcaProducto.Clear();
+            txtNombreProducto.Clear();
+            txtPrecioProducto.Clear();
+            txtStock.Clear();
+            ComboCategoria.SelectedIndex = -1;
+            dtVencimientoProducto.SelectedDate = DateTime.Now;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

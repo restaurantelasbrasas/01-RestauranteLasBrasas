@@ -67,5 +67,11 @@ namespace _01_RestauranteLasBrasas
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void BtnVer_Click(object sender, RoutedEventArgs e)
+        {
+            WindowMostrarEmpleados mostrarEmpleados = new WindowMostrarEmpleados();
+            mostrarEmpleados.Show();
+        }
     }
 }

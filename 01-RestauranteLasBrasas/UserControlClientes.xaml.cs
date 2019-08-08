@@ -30,12 +30,23 @@ namespace _01_RestauranteLasBrasas
             string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
 
             data = new DataClasses1DataContext(connectionString);
-            var cliente = from u in data.GetTable<Cliente>()
-                           select new { u.IdCliente, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Telefono, };
-            dgCliente.ItemsSource = cliente.ToList();
+            MostrarClientes();
         }
        
-
+        private void MostrarClientes()
+        {
+            try
+            {
+                data = new DataClasses1DataContext();
+                var cliente = from u in data.GetTable<Cliente>()
+                              select new { u.IdCliente, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Telefono, };
+                dgCliente.ItemsSource = cliente.ToList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             (this.Parent as Grid).Children.Remove(this);
@@ -68,6 +79,12 @@ namespace _01_RestauranteLasBrasas
         private void BtnBuscarTodos_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtIdentidad.Clear();
+            MostrarClientes();
         }
     }
 }

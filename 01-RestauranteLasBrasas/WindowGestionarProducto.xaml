@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_01_RestauranteLasBrasas"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Gestionar Producto" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        d:DesignHeight="540" d:DesignWidth="1010" WindowStyle="None" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
     <Grid  Background="#FFDEDEDE">
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -15,9 +15,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" Grid.Row="0" >
-            <TextBlock Text="Gestionar producto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="25" Foreground="White" />
-        </Grid>
+        <StackPanel Grid.Row="0">
+            <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top"  >
+                <TextBlock Text="Gestionar Producto" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+                <Button VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,9,10,0" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
+                    <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
+                </Button>
+            </Grid>
+        </StackPanel>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -25,18 +30,18 @@
             </Grid.ColumnDefinitions>
 
             <StackPanel Grid.Column="0" VerticalAlignment="Center">
-            <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
-                <TextBlock Text="Id Producto      " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
+                    <TextBlock Text="Id Producto      " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <TextBox x:Name="txtIdProducto" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0" IsEnabled="False"/>
-            </StackPanel>
-            <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
-                <TextBlock Text="Nombre            " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
+                    <TextBlock Text="Nombre            " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <TextBox x:Name="txtNombreProducto" Width="200" FontSize="20"  VerticalAlignment="Center" Foreground="Black" Margin="10,0,0,0"/>
-            </StackPanel>
-            <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
-                <TextBlock Text="Marca               " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
+                    <TextBlock Text="Marca               " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <TextBox x:Name="txtMarcaProducto" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-            </StackPanel>
+                </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Precio de venta" FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     <TextBox x:Name="txtPrecioProducto" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
@@ -51,7 +56,7 @@
                     <TextBlock Text="Categoria  " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
 
                     <ComboBox x:Name="ComboCategoria" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-                    
+
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Stock        " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
@@ -62,8 +67,9 @@
                     <Button x:Name="BtnAgregar"  Content="Agregar"  Margin="10,0,0,0" Click="BtnAgregar_Click"/>
                     <Button x:Name="BtnModificar"  Content="Modificar"  Margin="10,0,0,0" Click="BtnModificar_Click"/>
                     <Button x:Name="BtnEliminar"  Content="Eliminar"  Margin="10,0,0,0"/>
+                    <Button x:Name="BtnLimpiar" Content="Limpiar" Width="80" Click="BtnLimpiar_Click" Margin="10,0,0,0" VerticalAlignment="Center"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
-        </Grid>
+    </Grid>
 </Window>

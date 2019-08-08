@@ -32,7 +32,10 @@
                     <Button x:Name="BtnBuscar" Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0" Click="BtnBuscar_Click"/>
                 </StackPanel>
                 <DataGrid x:Name="dgCliente" Height="250" Margin="20" Foreground="Black" />
-                <Button x:Name="BtnGestionar" Content="Gestionar" Width="200" Click="BtnGestionar_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="BtnGestionar" Content="Gestionar" Width="200" Click="BtnGestionar_Click" Margin="205,0"/>
+                    <Button x:Name="BtnLimpiar" Content="Limpiar" Width="200" Click="BtnLimpiar_Click"/>
+                </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>

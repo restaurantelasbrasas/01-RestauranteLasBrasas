@@ -29,5 +29,13 @@ namespace _01_RestauranteLasBrasas
         {
             (this.Parent as Grid).Children.Remove(this);
         }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            txtApellido.Clear();
+            txtUsuario.Clear();
+            cmbEmpleado.SelectedIndex = -1;
+            cmbNombre.SelectedIndex = -1;
+        }
     }
 }
