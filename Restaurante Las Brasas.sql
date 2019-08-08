@@ -353,7 +353,15 @@ SELECT * FROM Restaurante.VENTA
 GO
 SELECT * FROM Restaurante.Empleado
 GO
-SELECT * FROM Restaurante.Cliente
+INSERT INTO Restaurante.Categoria(Descripcion)
+	VALUES('Parrillada'),
+		  ('Bebidas'),
+		  ('Platos')
+GO
+SELECT * FROM Restaurante.Categoria
 GO
 SELECT * FROM Restaurante.Producto
 GO
+INSERT INTO Restaurante.Producto(IdCategoria, Nombre, Marca, Stock, PrecioVenta, FechaVencimiento)
+	VALUES(1,'Coca', 'Cola',6,150,'11-10-2019')
+	go

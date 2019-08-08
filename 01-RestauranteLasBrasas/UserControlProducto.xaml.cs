@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+
 
 namespace _01_RestauranteLasBrasas
 {
@@ -20,10 +22,40 @@ namespace _01_RestauranteLasBrasas
     /// </summary>
     public partial class UserControlProducto : UserControl
     {
+        private DataClasses1DataContext data;
         public UserControlProducto()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
+            data = new DataClasses1DataContext(connectionString);
+            var producto = from u in data.GetTable<Producto>()
+                           select new { u.IdProducto, u.IdCategoria, u.Nombre, u.Marca, u.PrecioVenta, u.FechaVencimiento, u.Stock };
+            dgProducto.ItemsSource = producto.ToList();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtNombre.Text != "")
+            {
+                data = new DataClasses1DataContext();
+                var producto = from u in data.GetTable<Producto>()
+                               where u.Nombre.Equals(txtNombre.Text)
+                               select new { u.IdProducto, u.IdCategoria, u.Nombre, u.Marca, u.PrecioVenta, u.FechaVencimiento, u.Stock };
+               
+                if (producto == null)
+                {
+                    MessageBox.Show("no existe");
+                }
+                dgProducto.ItemsSource = producto.ToList();
+            }
+            else
+                MessageBox.Show("Ingrese un Nombre"); txtNombre.Focus();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            WindowGestionarProducto win = new WindowGestionarProducto();
+            win.Show();
+        }
     }
 }

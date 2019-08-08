@@ -73,7 +73,6 @@
       <DependentUpon>BD_RestauranteLasBrasasDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Clase_Conectar.cs" />
-    <Compile Include="Clase_Clientes.cs" />
     <Compile Include="DataClasses1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

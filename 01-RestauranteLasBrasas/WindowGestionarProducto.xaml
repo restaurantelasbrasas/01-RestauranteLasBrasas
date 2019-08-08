@@ -50,7 +50,7 @@
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
                     <TextBlock Text="Categoria  " FontSize="20" VerticalAlignment="Center"  Margin="10,0,0,0"/>
 
-                    <ComboBox x:Name="ComboCategoria" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
+                    <TextBox x:Name="txtCategoria" Width="200" FontSize="20" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
                     
                 </StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center" >
@@ -61,7 +61,7 @@
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
                     <Button x:Name="BtnAgregar"  Content="Agregar"  Margin="10,0,0,0" Click="BtnAgregar_Click"/>
                     <Button x:Name="BtnModificar"  Content="Modificar"  Margin="10,0,0,0" Click="BtnModificar_Click"/>
-                    <Button x:Name="BtnEliminar"  Content="Eliminar"  Margin="10,0,0,0"/>
+                    <Button x:Name="BtnEliminar"  Content="Eliminar"  Margin="10,0,0,0" Click="BtnEliminar_Click"/>
                 </StackPanel>
             </StackPanel>
         </Grid>

@@ -16,22 +16,13 @@
                 </Button>
             </Grid>
             <StackPanel Orientation="Horizontal" Margin="20">
-                <TextBlock Text="Id Producto" FontSize="20"/>
-                <TextBox Height="20" Width="200"  Background="White" Margin="10,0,0,0"/>
-                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Buscar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+                <TextBlock Text="Nombre Producto" FontSize="20"/>
+                <TextBox Name="txtNombre" Height="20" Width="200"  Background="White" Margin="10,0,0,0"/>
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Buscar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" Click="Button_Click" />
             </StackPanel>
-            <DataGrid x:Name="gridProductos" Margin="20" Height="300">
-                <DataGrid.Columns >
-                    <DataGridTextColumn Header="Categoria" Width="100" FontFamily="Roboto Condensed"/>
-                    <DataGridTextColumn Header="Nombre" Width="100" FontFamily="Roboto Condensed" />
-                    <DataGridTextColumn Header="Marca" Width="100" FontFamily="Roboto Condensed"/>
-                    <DataGridTextColumn Header="Stock" Width="100" FontFamily="Roboto Condensed"/>
-                    <DataGridTextColumn Header="Precio de venta" Width="150" FontFamily="Roboto Condensed"/>
-                    <DataGridTextColumn Header="Fecha de vencimiento" Width="200" FontFamily="Roboto Condensed"/>
-                </DataGrid.Columns>
-            </DataGrid>
-            <StackPanel Orientation="Horizontal" Margin="10,0,0,0">
-                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Agregar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
+            <DataGrid x:Name="dgProducto" Height="329" Margin="32,0,47.6,0"/>
+            <StackPanel Orientation="Horizontal" Margin="10,20,0,0">
+                <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Agregar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" Click="Button_Click_1" />
                 <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Modificar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
                 <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Eliminar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" />
             </StackPanel>

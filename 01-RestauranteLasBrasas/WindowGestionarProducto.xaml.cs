@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace _01_RestauranteLasBrasas
 {
@@ -21,35 +22,35 @@ namespace _01_RestauranteLasBrasas
     /// </summary>
     public partial class WindowGestionarProducto : Window
     {
-        Clase_Conectar conexion = new Clase_Conectar();
+        private DataClasses1DataContext data;
         public WindowGestionarProducto()
         {
             InitializeComponent();
+            
+            string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
+
+            data = new DataClasses1DataContext(connectionString);
+            var producto = from u in data.GetTable<Producto>()
+                           select new { u.IdProducto, u.IdCategoria, u.Nombre, u.Marca, u.PrecioVenta, u.FechaVencimiento, u.Stock };
         }
 
         private void BtnAgregar_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                conexion.AbrirConexion();
-                if (conexion.Estado == 1)
-                {
-                    string query = string.Format("RegistarProducto");
-                    SqlCommand command = new SqlCommand(query, conexion.Conexion);
-                    command.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter adaptador = new SqlDataAdapter(command);
+                Producto pro = new Producto();
 
-                   /* using (adaptador)
-                    {
-                        command.Parameters.AddWithValue("@idCategoria", ComboCategoria.SelectedItem);
-                        command.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
-                        command.Parameters.AddWithValue("@marca", txtMarcaProducto.Text);
-                        command.Parameters.AddWithValue("@stock");//falta agregar un campo
-                        command.Parameters.AddWithValue("@precioVenta", txtPrecioProducto.Text);
-                        command.Parameters.AddWithValue("@fechaVencimiento", dtVencimientoProducto);
-                    }*/
-                    MessageBox.Show("Registro agregado");
-                }
+                pro.Nombre = txtNombreProducto.Text;
+                pro.Marca = txtMarcaProducto.Text;
+                pro.PrecioVenta = Convert.ToDecimal(txtPrecioProducto.Text);
+                pro.FechaVencimiento = Convert.ToDateTime(dtVencimientoProducto.Text);
+                pro.IdCategoria = Convert.ToInt32(txtCategoria.Text);
+                pro.Stock = Convert.ToInt32(txtStock.Text);
+
+                data.Producto.InsertOnSubmit(pro);
+                data.SubmitChanges();
+                MessageBox.Show("REGISTRO AGREGADO");
+            
             }
             catch (Exception ex)
             {
@@ -62,30 +63,59 @@ namespace _01_RestauranteLasBrasas
         {
             try
             {
-                conexion.AbrirConexion();
-                if (conexion.Estado == 1)
+                Producto pro = new Producto();
+                if (txtNombreProducto.Text == pro.Nombre)
                 {
-                    string query = string.Format("RegistarProducto");
-                    SqlCommand command = new SqlCommand(query, conexion.Conexion);
-                    command.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter adaptador = new SqlDataAdapter(command);
+                    pro.Nombre = txtNombreProducto.Text;
+                    pro.Marca = txtMarcaProducto.Text;
+                    pro.PrecioVenta = Convert.ToDecimal(txtPrecioProducto.Text);
+                    pro.FechaVencimiento = Convert.ToDateTime(dtVencimientoProducto.Text);
+                    pro.IdCategoria = Convert.ToInt32(txtCategoria.Text);
+                    pro.Stock = Convert.ToInt32(txtStock.Text);
 
-                  /*  using (adaptador)
-                    {
-                        command.Parameters.AddWithValue("@idCategoria", ComboCategoria.SelectedItem);
-                        command.Parameters.AddWithValue("@nombre", txtNombreProducto.Text);
-                        command.Parameters.AddWithValue("@marca", txtMarcaProducto.Text);
-                        command.Parameters.AddWithValue("@stock", );//falta agregar un campo
-                        command.Parameters.AddWithValue("@precioVenta", txtPrecioProducto.Text);
-                        command.Parameters.AddWithValue("@fechaVencimiento", dtVencimientoProducto);
-                    }*/
+                    data.Producto.InsertOnSubmit(pro);
+                    data.SubmitChanges();
+
                     MessageBox.Show("Registro Actualizado");
                 }
+                else
+                    MessageBox.Show("El producto no existe");
+                
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            var producto = (from pro in data.Producto
+                            where pro.Nombre == txtNombreProducto.Text
+                            select pro).First();
+             if(producto != null)
+            {
+                var eliminar = from elim in data.Producto
+                               where elim.Nombre.Equals(txtNombreProducto.Text)
+                               select elim;
+                foreach( var detalles in eliminar)
+                {
+                    data.Producto.DeleteOnSubmit(detalles);
+                }
+                try
+                {
+                    data.SubmitChanges();
+                    MessageBox.Show("Registro Eliminado con exito");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }    
+            else
+                MessageBox.Show("Para eliminar escriba un nombre"); txtNombreProducto.Focus();
+
         }
     }
 }
