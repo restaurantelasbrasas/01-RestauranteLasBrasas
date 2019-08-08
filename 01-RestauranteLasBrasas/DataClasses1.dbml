@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_RestauranteLasBrasas" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-536T0JD\SQLEXPRESS;Initial Catalog=BD_RestauranteLasBrasas;Integrated Security=True" SettingsObjectName="_01_RestauranteLasBrasas.Properties.Settings" SettingsPropertyName="BD_RestauranteLasBrasasConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=ABELCONSUEGRA\SQLEXPRESS;Initial Catalog=BD_RestauranteLasBrasas;Integrated Security=True" SettingsObjectName="_01_RestauranteLasBrasas.Properties.Settings" SettingsPropertyName="BD_RestauranteLasBrasasConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="Restaurante.Cargo" Member="Cargo">
     <Type Name="Cargo">
       <Column Name="IdCargo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -45,10 +45,10 @@
       <Column Name="Identidad" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
       <Column Name="Apellido" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Sexo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="Sexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
       <Column Name="FechaNac" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Direccion" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="EstadoCivil" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EstadoCivil" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
       <Association Name="Empleado_Usuario" Member="Usuario" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Usuario" />
       <Association Name="Empleado_Venta" Member="Venta" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Venta" />
       <Association Name="Cargo_Empleado" Member="Cargo" ThisKey="IdCargo" OtherKey="IdCargo" Type="Cargo" IsForeignKey="true" />

@@ -43,7 +43,7 @@ namespace _01_RestauranteLasBrasas
                 }
                 if (conexion.State == ConnectionState.Closed)
                 {
-                    conexion.ConnectionString = string.Format(@"server=DESKTOP-536T0JD\SQLEXPRESS; database =BD_RestauranteLasBrasas;integrated security = true;");
+                    conexion.ConnectionString = string.Format(@"server(local)\SQLEXPRESS; database =BD_RestauranteLasBrasas;integrated security = true;");
                     conexion.Open();
                     Estado = 1;
                 }

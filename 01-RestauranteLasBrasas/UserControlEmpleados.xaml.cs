@@ -52,9 +52,9 @@ namespace _01_RestauranteLasBrasas
                 emp.Apellido = txtApellido.Text;
                 emp.Direccion = txtDireccion.Text;
                 emp.FechaNac = Convert.ToDateTime(dtFecha.Text);
-                emp.Sexo = cbSexo.Text;
+                emp.Sexo = Convert.ToChar(cbSexo);
                 emp.IdCargo = Convert.ToInt32(txtCargo.Text);
-                emp.EstadoCivil = cbEstadoCivil.Text;
+                emp.EstadoCivil = Convert.ToChar(cbEstadoCivil);
 
                 data.Empleado.InsertOnSubmit(emp);
                 data.SubmitChanges();
