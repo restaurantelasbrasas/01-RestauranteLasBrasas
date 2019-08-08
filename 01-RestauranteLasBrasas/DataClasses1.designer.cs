@@ -893,13 +893,13 @@ namespace _01_RestauranteLasBrasas
 		
 		private string _Nombre;
 		
-		private char _Sexo;
+		private string _Sexo;
 		
 		private System.DateTime _FechaNac;
 		
 		private string _Direccion;
 		
-		private char _EstadoCivil;
+		private string _EstadoCivil;
 		
 		private EntitySet<Usuario> _Usuario;
 		
@@ -921,13 +921,13 @@ namespace _01_RestauranteLasBrasas
     partial void OnApellidoChanged();
     partial void OnNombreChanging(string value);
     partial void OnNombreChanged();
-    partial void OnSexoChanging(char value);
+    partial void OnSexoChanging(string value);
     partial void OnSexoChanged();
     partial void OnFechaNacChanging(System.DateTime value);
     partial void OnFechaNacChanged();
     partial void OnDireccionChanging(string value);
     partial void OnDireccionChanged();
-    partial void OnEstadoCivilChanging(char value);
+    partial void OnEstadoCivilChanging(string value);
     partial void OnEstadoCivilChanged();
     #endregion
 		
@@ -1043,8 +1043,8 @@ namespace _01_RestauranteLasBrasas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="Char(1) NOT NULL")]
-		public char Sexo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexo", DbType="VarChar(5)")]
+		public string Sexo
 		{
 			get
 			{
@@ -1103,8 +1103,8 @@ namespace _01_RestauranteLasBrasas
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoCivil", DbType="Char(1) NOT NULL")]
-		public char EstadoCivil
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EstadoCivil", DbType="VarChar(15)")]
+		public string EstadoCivil
 		{
 			get
 			{

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
 
 namespace _01_RestauranteLasBrasas
 {
@@ -23,10 +24,15 @@ namespace _01_RestauranteLasBrasas
     public partial class UserControlEmpleados : UserControl 
 
     {
-       
+        private DataClasses1DataContext data;
         public UserControlEmpleados()
         {
             InitializeComponent();
+            string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
+
+            data = new DataClasses1DataContext(connectionString);
+            var empleado = from u in data.GetTable<Empleado>()
+                          select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Usuario , u.FechaNac, u.EstadoCivil};
         }
 
         
@@ -38,35 +44,28 @@ namespace _01_RestauranteLasBrasas
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    conexion.AbrirConexion();
-            //    if (conexion.Estado == 1)
-            //    {
-            //        string query = string.Format("MantenimientoEmpleados");
-            //        SqlCommand command = new SqlCommand(query, conexion.Conexion);
-            //        command.CommandType = CommandType.StoredProcedure;
-            //        SqlDataAdapter adaptador = new SqlDataAdapter(command);
+            try
+            {
+                Empleado emp = new Empleado();
+                emp.Identidad = txtIdentidad.Text;
+                emp.Nombre = txtNombre.Text;
+                emp.Apellido = txtApellido.Text;
+                emp.Direccion = txtDireccion.Text;
+                emp.FechaNac = Convert.ToDateTime(dtFecha.Text);
+                emp.Sexo = cbSexo.Text;
+                emp.IdCargo = Convert.ToInt32(txtCargo.Text);
+                emp.EstadoCivil = cbEstadoCivil.Text;
 
-            //        using (adaptador)
-            //        {
-            //            command.Parameters.AddWithValue("@IDN", Identidad.Text);
-            //            command.Parameters.AddWithValue("@Apellidos", Apellido.Text);
-            //            command.Parameters.AddWithValue("@Nombres", Nombre.Text);
-            //            command.Parameters.AddWithValue("@Sexo", cbSexo.SelectedValue);
-            //            command.Parameters.AddWithValue("@FechaNac", Fecha);
-            //            command.Parameters.AddWithValue("@Direccion", Direccion);
-            //            command.Parameters.AddWithValue("@EstadoCivil", EstadoCivil.SelectedValue);
-            //            command.Parameters.AddWithValue("@IdCargo", Cargo.SelectedValue);
-            //        }
-            //    }
-            //    MessageBox.Show("Registro Guardado Correctamente");
-            //}
-            //catch (Exception)
-            //{
+                data.Empleado.InsertOnSubmit(emp);
+                data.SubmitChanges();
 
-            //    throw;
-            //}
+                MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

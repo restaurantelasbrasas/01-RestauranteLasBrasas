@@ -45,10 +45,10 @@
       <Column Name="Identidad" Type="System.String" DbType="VarChar(18) NOT NULL" CanBeNull="false" />
       <Column Name="Apellido" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="Sexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="Sexo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="FechaNac" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Direccion" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
-      <Column Name="EstadoCivil" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoCivil" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Association Name="Empleado_Usuario" Member="Usuario" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Usuario" />
       <Association Name="Empleado_Venta" Member="Venta" ThisKey="IdEmpleado" OtherKey="IdEmpleado" Type="Venta" />
       <Association Name="Cargo_Empleado" Member="Cargo" ThisKey="IdCargo" OtherKey="IdCargo" Type="Cargo" IsForeignKey="true" />
