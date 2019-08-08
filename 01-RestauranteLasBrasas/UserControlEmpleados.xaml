@@ -78,6 +78,7 @@
                 
                 <Button x:Name="btnAgregar" Content="Agregar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" Margin="111,0,98.6,0" Click="Agregar_Click" />
                 <Button x:Name="btnVer" Content="Empleados" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" Margin="111,10,98.6,0" Click="BtnVer_Click"/>
+                <Button x:Name="btnLimpiar" Content="Limpiar" Background="#FF1344C5" Width="200" FontSize="15" BorderBrush="Blue" Margin="111,10,98.6,20" Click="BtnLimpiar_Click" />
             </StackPanel>
 
         </Grid>

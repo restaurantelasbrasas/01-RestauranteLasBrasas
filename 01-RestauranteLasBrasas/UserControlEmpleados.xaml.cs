@@ -21,7 +21,7 @@ namespace _01_RestauranteLasBrasas
     /// <summary>
     /// Lógica de interacción para UserControlEmpleados.xaml
     /// </summary>
-    public partial class UserControlEmpleados : UserControl 
+    public partial class UserControlEmpleados : UserControl
 
     {
         private DataClasses1DataContext data;
@@ -32,11 +32,11 @@ namespace _01_RestauranteLasBrasas
 
             data = new DataClasses1DataContext(connectionString);
             var empleado = from u in data.GetTable<Empleado>()
-                          select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Usuario , u.FechaNac, u.EstadoCivil};
+                           select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Usuario, u.FechaNac, u.EstadoCivil };
         }
 
-        
-        
+
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             (this.Parent as Grid).Children.Remove(this);
@@ -46,21 +46,34 @@ namespace _01_RestauranteLasBrasas
         {
             try
             {
+                data = new DataClasses1DataContext();
                 Empleado emp = new Empleado();
                 emp.Identidad = txtIdentidad.Text;
                 emp.Nombre = txtNombre.Text;
                 emp.Apellido = txtApellido.Text;
                 emp.Direccion = txtDireccion.Text;
                 emp.FechaNac = Convert.ToDateTime(dtFecha.Text);
-                emp.Sexo = Convert.ToChar(cbSexo);
+                emp.Sexo = Convert.ToChar(cbSexo.Text);
+                //if(cbSexo.Text == "M")                
+                //    emp.Sexo = 'M';                
+                //else if(cbSexo.Text == "F")
+                //    emp.Sexo = 'F';
                 emp.IdCargo = Convert.ToInt32(txtCargo.Text);
-                emp.EstadoCivil = Convert.ToChar(cbEstadoCivil);
+                //emp.EstadoCivil = Convert.ToChar(cbEstadoCivil);
+
+                if (cbEstadoCivil.Text == "Soltero")
+                    emp.EstadoCivil = 'S';
+                else if (cbEstadoCivil.Text == "Casado")
+                    emp.EstadoCivil = 'C';
+                else if (cbEstadoCivil.Text == "Viudo")
+                    emp.EstadoCivil = 'V';
 
                 data.Empleado.InsertOnSubmit(emp);
                 data.SubmitChanges();
 
                 MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
 
+                Limpiar();
             }
             catch (Exception ex)
             {
@@ -68,10 +81,28 @@ namespace _01_RestauranteLasBrasas
             }
         }
 
+        private void Limpiar()
+        {
+            txtApellido.Clear();
+            txtCargo.Clear();
+            txtDireccion.Clear();
+            txtIdentidad.Clear();
+            txtNombre.Clear();
+            cbEstadoCivil.SelectedIndex = -1;
+            cbSexo.SelectedIndex = -1;
+
+            txtIdentidad.Focus();
+        }
+
         private void BtnVer_Click(object sender, RoutedEventArgs e)
         {
             WindowMostrarEmpleados mostrarEmpleados = new WindowMostrarEmpleados();
             mostrarEmpleados.Show();
+        }
+
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        {
+            Limpiar();           
         }
     }
 }
