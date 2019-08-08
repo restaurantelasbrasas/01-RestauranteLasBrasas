@@ -33,6 +33,7 @@ namespace _01_RestauranteLasBrasas
             data = new DataClasses1DataContext(connectionString);
             var empleado = from u in data.GetTable<Empleado>()
                           select new { u.IdEmpleado, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Usuario , u.FechaNac, u.EstadoCivil};
+
         }
 
         
@@ -66,6 +67,42 @@ namespace _01_RestauranteLasBrasas
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void BtnVer_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtIdentidad.Text != "")
+            {
+                var empleado = (from emp in data.Empleado
+                                where emp.Identidad == txtIdentidad.Text
+                                select emp).First();
+                //var empleado = data.Empleado.First(emp => emp.nombre.Equals(txtNombre.Text));
+                if (empleado != null)
+                {
+                    var eliminar = from elim in data.Empleado
+                                   where elim.Identidad.Equals(txtIdentidad.Text)
+                                   select elim;
+                    foreach (var detalles in eliminar)
+                    {
+                        data.Empleado.DeleteOnSubmit(detalles);
+                    }
+                    try
+                    {
+                        data.SubmitChanges();
+                        MessageBox.Show("Registro eliminado con exito");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                    MessageBox.Show("Para eliminar escriba un numero de identidad"); txtIdentidad.Focus();
+            }
+            else
+                MessageBox.Show("No existe registo con ese nombre");
+
         }
     }
 }

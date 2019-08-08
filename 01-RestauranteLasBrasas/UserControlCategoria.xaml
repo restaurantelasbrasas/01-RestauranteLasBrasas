@@ -17,7 +17,7 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0">
             <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top"  >
-                <TextBlock Text="Categoria" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
+                <TextBlock Text="Empleado" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
                 <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,10,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click" >
                     <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
                 </Button>
@@ -27,20 +27,19 @@
         <Grid Grid.Row="2">
             <StackPanel>
                 <StackPanel  Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
-                    <TextBlock Text="Id Categoria" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
-                    <TextBox Width="200" FontSize="30" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0"/>
-                    <Button Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0"/>
-                    <Button x:Name="BtnBuscarTodos" Content="Todos"  VerticalAlignment="Center"  Width="150" Margin="10,0,0,0"/>
+                    <TextBlock Text="Identidad Empleado" FontSize="30" VerticalAlignment="Center"  Margin="10,0,0,0" Foreground="Black"/>
+                    <TextBox Name="txtIdEmpleado" Width="310" FontSize="30" Foreground="Black" VerticalAlignment="Center"  Margin="10,0,0,0.6"/>
+                    <Button Content="Buscar"  VerticalAlignment="Center"  Width="150"  Margin="10,0,0,0" Click="Button_Click_1"/>
                 </StackPanel>
                 <StackPanel>
-                    <DataGrid Margin="20"  Height="290" Foreground="Black" />
+                    <DataGrid Name="dgEmpleado" Margin="20"  Height="290" Foreground="Black" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"/>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <StackPanel Orientation="Horizontal">
-                        <Button x:Name="btnAgregar" Content="Agregar" Margin="20,0,0,0" Width="150"/>
-                        <Button x:Name="btnModificar" Content="Modificar"  Margin="20,0,0,0" Width="150"/>
-                        <Button x:Name="btnEliminar" Content="Eliminar" Margin="20,0,0,0" Width="150"/>
+                        
+                        <Button x:Name="btngestionar" Content="Gestionar"  Margin="20,0,0,0" Width="182" Height="41"/>
+                        
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

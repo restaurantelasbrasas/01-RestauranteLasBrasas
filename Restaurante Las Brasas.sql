@@ -353,12 +353,12 @@ SELECT * FROM Restaurante.VENTA
 GO
 SELECT * FROM Restaurante.Empleado
 GO
-INSERT INTO Restaurante.Categoria(Descripcion)
-	VALUES('Parrillada'),
-		  ('Bebidas'),
-		  ('Platos')
+INSERT INTO Restaurante.Cargo(Descripcion)
+	VALUES('Gerente'),
+		  ('Cajero'),
+		  ('Lava Platos')
 GO
-SELECT * FROM Restaurante.Categoria
+SELECT * FROM Restaurante.Cargo
 GO
 SELECT * FROM Restaurante.Producto
 GO
