@@ -47,7 +47,7 @@
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">Menu</TextBlock>
         </Grid>
-        <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FF38220E" >
+        <Grid x:Name="GridMenu" Width="173" HorizontalAlignment="Left" Background="#FF38220E" >
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
@@ -90,12 +90,12 @@
                             <TextBlock Text="Historial" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemCategoria" Height="55">
+                   <!-- <ListViewItem x:Name="ItemCategoria" Height="55">
                         <StackPanel  Orientation="Horizontal" Background="#ee7600">
                             <materialDesign:PackIcon Kind="Class" Height="20" Width="20" Margin="10"/>
                             <TextBlock Text="Categoria" VerticalAlignment="Center"  Margin="20 10"  Width="75"/>
                         </StackPanel>
-                    </ListViewItem>
+                    </ListViewItem>!-->
                     <ListViewItem x:Name="ItemClientes" Height="55">
                         <StackPanel  Orientation="Horizontal" Background="#ee7600">
                             <materialDesign:PackIcon Kind="Face" Height="20" Width="20" Margin="10"/>

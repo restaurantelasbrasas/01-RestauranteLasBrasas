@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,15 @@ namespace _01_RestauranteLasBrasas
     /// </summary>
     public partial class Login : Window
     {
+        DataClasses1DataContext data;
         public Login()
         {
             InitializeComponent();
+
+            string connectionString = ConfigurationManager.ConnectionStrings["_01_RestauranteLasBrasas.Properties.Settings.BD_RestauranteLasBrasasConnectionString"].ConnectionString;
+
+            data = new DataClasses1DataContext(connectionString);
+
         }
 
         private void Salir_Click(object sender, RoutedEventArgs e)

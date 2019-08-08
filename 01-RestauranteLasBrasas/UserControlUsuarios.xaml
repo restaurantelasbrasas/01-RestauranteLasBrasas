@@ -20,23 +20,29 @@
                 <materialDesign:PackIcon Kind="Close" Height="20" Width="20"/>
             </Button>
         </Grid>
-        <StackPanel Grid.Row="2" Margin="20"  >
+        <StackPanel Grid.Row="2" Margin="20,19.6,19.6,18.4"  >
 
             <StackPanel Orientation="Horizontal" >
                 <TextBlock Text="Usuario                 " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                <TextBox x:Name="Usuario" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+                <TextBox x:Name="txtUsuario" Background="White" Width="200" FontSize="20" Foreground="Black"/>
                 <Button x:Name="btnBuscar" Content="Buscar" Margin="10,0,0,0" FontSize="15" Width="90" />
                 <TextBlock Text="Contraseña           " VerticalAlignment="Center" FontSize="20" Foreground="Black" Margin="30,0,0,0"/>
-                <TextBox x:Name="Apellido" Background="White" Width="200" FontSize="20" Foreground="Black" />
+                <TextBox x:Name="txtContraseña" Background="White" Width="200" FontSize="20" Foreground="Black" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                 <TextBlock Text="Tipo de usuario    " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                <ComboBox x:Name="Nombre" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+                <TextBox x:Name="txtNivel" Background="White" Width="200" FontSize="20" Foreground="Black"/>
                 <TextBlock Text="Empleado             " VerticalAlignment="Center" FontSize="20" Foreground="Black"  Margin="130,0,0,0"/>
-                <ComboBox x:Name="ÌdEmpleado" Background="White" Width="200" FontSize="20" Foreground="Black"/>
+                <TextBox x:Name="txtdEmpleado" Background="White" Width="200" FontSize="20" Foreground="Black"/>
             </StackPanel>
 
-            <DataGrid Height="200" Margin="0,30,0,0" Foreground="Black"/>
+            <DataGrid x:Name="dgUsuario" Height="200" Margin="10" Foreground="Black"/>
+            <StackPanel Grid.Row="2" Orientation ="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="btnAgregar"  Content="Agregar " Margin="10,10,10,10" Click="BtnAgregar_Click_1"/>
+                <Button x:Name="btnModificar" Content="Modificar" HorizontalAlignment="Center" Margin="10"/>
+                <Button x:Name="btnEliminar"  Content="Eliminar " Margin="10"/>
+            </StackPanel>
         </StackPanel>
+
     </Grid>
 </UserControl>
