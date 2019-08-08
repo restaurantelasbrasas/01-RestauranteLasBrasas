@@ -29,7 +29,7 @@
                 <StackPanel Width="300" Orientation="Vertical" HorizontalAlignment="Left" Margin="20">
                     <Grid Height="250" OpacityMask="Black" RenderTransformOrigin="0.507,0.284" >
 
-                        <Image Source="Logo/GridFactura.png" Width="300"/>
+                        <Image Source="Logo/GridFactura.png" Width="Auto" Margin="0,0,232,0"/>
 
                     </Grid>
                     <Grid Height="50"  Width="245" Background="White" Margin="0,10,0,0">
