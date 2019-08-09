@@ -32,6 +32,8 @@ namespace _01_RestauranteLasBrasas
             data = new DataClasses1DataContext(connectionString);
             var cliente = from u in data.GetTable<Cliente>()
                            select new { u.IdCliente, u.Identidad, u.Nombre, u.Apellido, u.Direccion, u.Sexo, u.Telefono, };
+
+            //se le asignan los valores de la tabla al data grid para que puedan ser visualizados 
             dgCliente.ItemsSource = cliente.ToList();
         }
        
@@ -65,9 +67,6 @@ namespace _01_RestauranteLasBrasas
 
         }
 
-        private void BtnBuscarTodos_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+      
     }
 }
