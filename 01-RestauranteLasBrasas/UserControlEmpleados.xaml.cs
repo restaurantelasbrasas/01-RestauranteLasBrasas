@@ -60,7 +60,7 @@ namespace _01_RestauranteLasBrasas
                 data.Empleado.InsertOnSubmit(emp);
                 data.SubmitChanges();
 
-                MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
+                MessageBox.Show("REGISTRO SE A GUARDADO CORRECTAMENTE");
 
             }
             catch (Exception ex)

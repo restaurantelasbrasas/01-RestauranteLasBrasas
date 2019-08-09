@@ -64,5 +64,40 @@ namespace _01_RestauranteLasBrasas
                 MessageBox.Show(ex.ToString());
             }
         }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtUsuario.Text != "")
+            {
+                var cliente = (from emp in data.Usuario
+                               where emp.Usuario1 == txtUsuario.Text
+                               select emp).First();
+                //var empleado = data.Empleado.First(emp => emp.nombre.Equals(txtNombre.Text));
+                if (cliente != null)
+                {
+                    var eliminar = from elim in data.Usuario
+                                   where elim.Usuario1.Equals(txtUsuario.Text)
+                                   select elim;
+                    foreach (var cliente1 in eliminar)
+                    {
+                        data.Usuario.DeleteOnSubmit(cliente1);
+                    }
+                    try
+                    {
+                        data.SubmitChanges();
+                        MessageBox.Show("Registro eliminado con exito");
+                    }
+                    catch (Exception ex)
+                    {
+
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
+                else
+                    MessageBox.Show("Para eliminar escriba el nombre de usuario"); txtUsuario.Focus();
+            }
+            else
+                MessageBox.Show("No existe registo con ese nombre");
+        }
     }
 }

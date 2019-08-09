@@ -47,7 +47,7 @@
             </StackPanel>
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="35">Menu</TextBlock>
         </Grid>
-        <Grid x:Name="GridMenu" Width="173" HorizontalAlignment="Left" Background="#FF38220E" >
+        <Grid x:Name="GridMenu" Width="55" HorizontalAlignment="Left" Background="#FF38220E" >
             <Grid.Effect>
                 <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE"/>
             </Grid.Effect>
