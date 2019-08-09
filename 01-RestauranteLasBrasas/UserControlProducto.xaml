@@ -16,7 +16,7 @@
                 </Button>
             </Grid>
             <StackPanel Orientation="Horizontal" Margin="20">
-                <TextBlock Text="Nombre Producto" FontSize="20"/>
+                <TextBlock Text="Nombre Producto" FontSize="20" Foreground="Black"/>
                 <TextBox Name="txtNombre" Height="30" Width="276"  Background="White" Margin="10,0,0,0" FontSize="25"/>
                 <Button Width="100" Height="30" VerticalAlignment="Center" Margin="10,0,0,0" Content="Buscar" FontSize="15" Background="#ff5709" BorderBrush="#ff5709" Foreground="White" Click="Button_Click" />
             </StackPanel>
