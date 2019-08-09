@@ -44,47 +44,53 @@ namespace _01_RestauranteLasBrasas
 
         private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-            try
+            if (txtApellido.Text == String.Empty || txtDireccion.Text == String.Empty || txtIdentidad.Text == String.Empty || txtNombre.Text == String.Empty || cbEstadoCivil.SelectedIndex == -1 || cbSexo.SelectedIndex == -1 || cmbCargo.SelectedIndex == -1 || dtFecha.Text == String.Empty)
+                MessageBox.Show("Debe llenar todos los campos");
+            else
             {
-                data = new DataClasses1DataContext();
-                Empleado emp = new Empleado();
-                emp.Identidad = txtIdentidad.Text;
-                emp.Nombre = txtNombre.Text;
-                emp.Apellido = txtApellido.Text;
-                emp.Direccion = txtDireccion.Text;
-                emp.FechaNac = Convert.ToDateTime(dtFecha.Text);
-                emp.Sexo = Convert.ToChar(cbSexo.Text);
-                //if(cbSexo.Text == "M")                
-                //    emp.Sexo = 'M';                
-                //else if(cbSexo.Text == "F")
-                //    emp.Sexo = 'F';
-                //emp.IdCargo = Convert.ToInt32(txtCargo.Text);
+                try
+                {
+                    data = new DataClasses1DataContext();
+                    Empleado emp = new Empleado();
+                    emp.Identidad = txtIdentidad.Text;
+                    emp.Nombre = txtNombre.Text;
+                    emp.Apellido = txtApellido.Text;
+                    emp.Direccion = txtDireccion.Text;
+                    emp.FechaNac = Convert.ToDateTime(dtFecha.Text);
+                    emp.Sexo = Convert.ToChar(cbSexo.Text);
+                    //if(cbSexo.Text == "M")                
+                    //    emp.Sexo = 'M';                
+                    //else if(cbSexo.Text == "F")
+                    //    emp.Sexo = 'F';
+                    //emp.IdCargo = Convert.ToInt32(txtCargo.Text);
 
-                if (cmbCargo.Text == "Administrador")
-                    emp.IdCargo = 1;
-                else if (cmbCargo.Text == "Gerente")
-                    emp.IdCargo = 2;
-                if (cmbCargo.Text == "Empleado")
-                    emp.IdCargo = 3;
+                    if (cmbCargo.Text == "Administrador")
+                        emp.IdCargo = 1;
+                    else if (cmbCargo.Text == "Gerente")
+                        emp.IdCargo = 2;
+                    if (cmbCargo.Text == "Empleado")
+                        emp.IdCargo = 3;
 
-                if (cbEstadoCivil.Text == "Soltero")
-                    emp.EstadoCivil = 'S';
-                else if (cbEstadoCivil.Text == "Casado")
-                    emp.EstadoCivil = 'C';
-                else if (cbEstadoCivil.Text == "Viudo")
-                    emp.EstadoCivil = 'V';
+                    if (cbEstadoCivil.Text == "Soltero")
+                        emp.EstadoCivil = 'S';
+                    else if (cbEstadoCivil.Text == "Casado")
+                        emp.EstadoCivil = 'C';
+                    else if (cbEstadoCivil.Text == "Viudo")
+                        emp.EstadoCivil = 'V';
 
-                data.Empleado.InsertOnSubmit(emp);
-                data.SubmitChanges();
+                    data.Empleado.InsertOnSubmit(emp);
+                    data.SubmitChanges();
 
-                MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
+                    MessageBox.Show("REGISTRO GUARDADO CORRECTAMENTE");
 
-                Limpiar();
+                    Limpiar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            
         }
 
         private void Limpiar()

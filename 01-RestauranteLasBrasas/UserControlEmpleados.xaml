@@ -33,15 +33,15 @@
                 <StackPanel Width="550" Height="398" VerticalAlignment="Top" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Identidad   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="txtIdentidad" Background="White" Width="400" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="txtIdentidad" Background="White" Width="400" FontSize="20" Foreground="Black" MaxLength="18"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Nombre     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="txtNombre" Background="White" Width="400" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="txtNombre" Background="White" Width="400" FontSize="20" Foreground="Black" MaxLength="30"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Apellido     " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="txtApellido" Background="White" Width="400" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="txtApellido" Background="White" Width="400" FontSize="20" Foreground="Black" MaxLength="30"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Sexo          " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
@@ -56,7 +56,7 @@
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Direccion   " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
-                        <TextBox x:Name="txtDireccion" Background="White" Width="400" FontSize="20" Foreground="Black"/>
+                        <TextBox x:Name="txtDireccion" Background="White" Width="400" FontSize="20" Foreground="Black" MaxLength="80"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
                         <TextBlock Text="Estado Civil " VerticalAlignment="Center" FontSize="20" Foreground="Black"/>
