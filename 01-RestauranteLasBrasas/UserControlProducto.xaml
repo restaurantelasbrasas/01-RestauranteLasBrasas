@@ -11,7 +11,7 @@
         <StackPanel Orientation="Vertical">
             <Grid Background="#FF38220E" Height="50" VerticalAlignment="Top" >
                 <TextBlock Text="PRODUCTO" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30" Foreground="White" />
-                <Button VerticalAlignment="Center" HorizontalAlignment="Right" Margin="10" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B">
+                <Button VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,9.6,9" Background="#FFAE9A8B" BorderBrush="#FFAE9A8B" Click="Button_Click_2" >
                     <materialDesign:PackIcon Kind="Close" Height="25" Width="25"/>
                 </Button>
             </Grid>
